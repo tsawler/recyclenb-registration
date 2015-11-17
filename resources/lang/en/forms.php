@@ -1,0 +1,30 @@
+<?php
+
+return [
+    'form_title'           => 'Brand Owner Registration Form',
+    'oil_program'          => 'Oil and Glycol Program',
+    'name_of_applicant'    => 'Name of Applicant:',
+    'register_for'         => 'Register For:',
+    'paint'                => 'Paint',
+    'oil'                  => 'Oil',
+    'antifreeze'           => 'Antifreeze/Glycol',
+    'electronics'          => 'Electronics',
+    'address_head_office'  => 'Address and Location of Head Office of the Applicant:',
+    'physical_location'    => 'Physical Location:',
+    'mailing_address'      => 'Mailing Address:',
+    'province_state'       => 'Province/State:',
+    'zip'                  => 'Postal/Zip Code:',
+    'nb_location_blurb'    => 'Address and Location of Main Place of Business in New Brunswick:',
+    'corp_blurb'           => 'If a Corporation, provide the following information relating to all the officers of the corporation:',
+    'name'                 => 'Name:',
+    'title'                => 'Title:',
+    'address_of_residence' => 'Address of Place of Residence:',
+    'officer'              => "Officer ",
+    'contact_blurb'        => 'Name, Address and Telephone Number of Person to whom any correspondence or inquiries should be directed:',
+    'email_address'        => 'Email Address:',
+    'telephone'            => 'Telephone Number:',
+    'agent_blurb'          => 'Name, Company Name, Address and Telephone of any AGENT acting on behalf of the Applicant:',
+    'company_name'         => 'Company Name:',
+    'register'             => 'Register',
+
+];

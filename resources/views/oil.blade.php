@@ -5,14 +5,34 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-        <h1>Brand Owner Registration Form</h1>
-        <h2>Oil and Glycol Program</h2>
+        <h1>{!! Lang::get('forms.form_title') !!}</h1>
+        <h2>{!! Lang::get('forms.oil_program') !!}</h2>
         <hr>
-        {!! Form::open(array('url' => 'foo/bar')) !!}
+        {!! Form::open(array('url' => '/oil-and-glycol-program', 'method' => 'post', 'id' => 'bookform', 'name' => 'bookform')) !!}
             @include('forms.oil-form')
         {!! Form::close() !!}
     </div>
 
     <div class="col-md-2"></div>
 
+@stop
+
+@section('bottom-js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#bookform").validate({
+                errorClass:'text-danger',
+                validClass:'text-success',
+                errorElement:'span',
+                highlight: function (element, errorClass, validClass) {
+                    $(element).parents("div[class='form-group']").addClass(errorClass).removeClass(validClass);
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).parents(".text-danger").removeClass(errorClass).addClass(validClass);
+                }
+            });
+        });
+    </script>
 @stop
