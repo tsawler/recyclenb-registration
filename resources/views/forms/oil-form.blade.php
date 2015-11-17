@@ -4,13 +4,19 @@
 </div>
 
 <div class="form-group">
-    <label for="register_for">Registry For:</label>
-    {!! Form::select('register_for', [
-							'1' => 'Paint',
-							'2' => 'Oil',
-							'3' => 'Antifreeze/Glycol'],
-							null,
-							['class' => 'form-control']) !!}
+    <label>Register For:</label>
+
+    <div class="checkbox">
+        <label>
+            {!! Form::checkbox('paint', '1') !!} Paint
+        </label><br>
+        <label>
+            {!! Form::checkbox('oil', '1') !!} Oil
+        </label><br>
+        <label>
+            {!! Form::checkbox('antifreeze', '1') !!} Antifreeze/Glycol
+        </label>
+    </div>
 </div>
 
 <h3>Address and Location of Head Office of the Applicant:</h3>
