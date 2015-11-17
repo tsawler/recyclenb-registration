@@ -2,9 +2,9 @@
 namespace App\Http\Controllers;
 
 
-class OilController extends Controller {
+class TireController extends Controller {
 
-    public function postOil() {
+    public function postTire() {
         return "Display confirmation screen here...";
     }
 }
