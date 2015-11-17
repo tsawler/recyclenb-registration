@@ -4,20 +4,14 @@
 </div>
 
 <div class="form-group">
-    <label>{!! Lang::get('forms.register_for') !!}</label>
+    <label>{!! Lang::get('forms.does_your_company') !!}</label>
 
     <div class="checkbox">
         <label>
-            {!! Form::checkbox('paint', '1') !!} {!! Lang::get('forms.paint') !!}
+            {!! Form::radio('sell_tires', '1') !!} {!! Lang::get('forms.yes_we_sell') !!}
         </label><br>
         <label>
-            {!! Form::checkbox('oil', '1') !!} {!! Lang::get('forms.oil') !!}
-        </label><br>
-        <label>
-            {!! Form::checkbox('antifreeze', '1') !!} {!! Lang::get('forms.antifreeze') !!}
-        </label><br>
-        <label>
-            {!! Form::checkbox('electronics', '1') !!} {!! Lang::get('forms.electronics') !!}
+            {!! Form::radio('sell_tires', '0') !!} {!! Lang::get('forms.no_we_do_not') !!}
         </label>
     </div>
 </div>
@@ -36,7 +30,7 @@
 
 <div class="form-group">
     <label for="head_province_state">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('head_province_state', array(
+    {!! Form::select('head_province_state', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -100,9 +94,9 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							"NB",
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -124,7 +118,7 @@
 
 <div class="form-group">
     <label for="nb_province_state">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('nb_province_state', array(
+    {!! Form::select('nb_province_state', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -188,9 +182,9 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							null,
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -218,7 +212,7 @@
 
 <div class="form-group">
     <label for="officer_1_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_1_province', array(
+    {!! Form::select('officer_1_province', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -282,9 +276,9 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							null,
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -310,7 +304,7 @@
 
 <div class="form-group">
     <label for="officer_2_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_2_province', array(
+    {!! Form::select('officer_2_province', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -374,16 +368,15 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							null,
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
     <label for="officer_2_zip">{!! Lang::get('forms.zip') !!}</label>
     {!! Form::text('officer_2_zip', null, ['id' => 'officer_2_zip', 'class' => 'form-control']) !!}
 </div>
-
 
 
 <h4>{!! Lang::get('forms.officer') !!} #3</h4>
@@ -404,7 +397,7 @@
 
 <div class="form-group">
     <label for="officer_3_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_3_province', array(
+    {!! Form::select('officer_3_province', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -468,9 +461,9 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							null,
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -479,9 +472,7 @@
 </div>
 
 
-
-
-<h3>{!! Lang::get('forms.contact_blurb') !!}:</h3>
+<h3>{!! Lang::get('forms.contact_blurb') !!}</h3>
 
 <div class="form-group">
     <label for="contact_name">{!! Lang::get('forms.name') !!}</label>
@@ -500,7 +491,7 @@
 
 <div class="form-group">
     <label for="contact_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('contact_province', array(
+    {!! Form::select('contact_province', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -564,9 +555,60 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							"NB",
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
+    <label>{!! Lang::get('forms.if_your_company_sells') !!}</label><br>
+    <div class="checkbox">
+        <label>
+            {!! Form::radio('remittance', 'Remit to RNB') !!} {!! Lang::get('forms.remit_to_rnb') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('remittance', 'Remit Through Head Office') !!} {!! Lang::get('forms.remit_through_head_office') !!}
+            <sup>*</sup>
+        </label><br>
+        <label>
+            {!! Form::radio('remittance', 'Remit Through Supplier') !!} {!! Lang::get('forms.remit_through_supplier') !!}
+            <sup>*</sup>
+        </label>
+    </div>
+
+    <label><sup>*</sup>{!! Lang::get('forms.must_supply') !!}</label>
+</div>
+
+<div class="form-group">
+    <label>{!! Lang::get('type_of_operation') !!}</label>
+    <div class="checkbox">
+        <label>
+            {!! Form::radio('type_of_company', 'Tire Retailer') !!} {!! Lang::get('forms.tire_retailer') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Car Dealer') !!} {!! Lang::get('forms.car_dealer') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Solid Waste Commission') !!} {!! Lang::get('forms.solid_waste_commission') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Garage') !!} {!! Lang::get('forms.garage') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Trucking Company') !!} {!! Lang::get('forms.trucking_company') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Towing Company') !!} {!! Lang::get('forms.towing_company') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Salvage Yard') !!} {!! Lang::get('forms.salvage_yard') !!}
+        </label><br>
+        <label>
+            {!! Form::radio('type_of_company', 'Other') !!} {!! Lang::get('forms.other') !!}
+
+        </label>
+    </div>
+
 </div>
 
 <div class="form-group">
@@ -579,7 +621,7 @@
     {!! Form::text('contact_phone', null, ['id' => 'contact_phone', 'class' => 'form-control required']) !!}
 </div>
 
-<h3>{!! Lang::get('agent_blurb') !!}</h3>
+<h3>{!! Lang::get('forms.agent_blurb') !!}</h3>
 
 <div class="form-group">
     <label for="agent_name">{!! Lang::get('forms.name') !!}</label>
@@ -603,7 +645,7 @@
 
 <div class="form-group">
     <label for="agent_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('agent_province', array(
+    {!! Form::select('agent_province', [
 							"AB" => "Alberta",
                             "BC" => "British Columbia",
                             "MB" => "Manitoba",
@@ -667,9 +709,9 @@
                             "WA" => "Washington",
                             "WV" => "West Virginia",
                             "WI" => "Wisconsin",
-                            "WY" => "Wyoming"),
+                            "WY" => "Wyoming"],
 							"NB",
-							array('class' => 'form-control')) !!}
+							['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -685,7 +727,7 @@
 <hr>
 <div class="form-group">
     <div class="controls">
-        {!!  Form::submit(Lang::get('forms.register'), array('class' => 'btn btn-primary')) !!}
+        {!!  Form::submit(Lang::get('forms.register'), ['class' => 'btn btn-primary']) !!}
     </div>
 </div>
 <br><br>

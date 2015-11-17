@@ -16,3 +16,8 @@ Route::get('/oil-and-glycol-program', function () {
 });
 
 Route::post('/oil-and-glycol-program', 'OilController@postOil');
+
+
+Route::get('/tire-program', function () {
+    return view('tires');
+});
