@@ -1,0 +1,1 @@
+An online registration form has been completed. Please log into the admin back end to view details.

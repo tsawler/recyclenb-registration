@@ -6,6 +6,10 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12"></div>
+            <a class="pull-right" href="/changelanguage?lang={!! Lang::get('forms.lang') !!}&url=/">{!! Lang::get('forms.language_choice') !!}</a>
+        </div>
 
         <h1>Recyle NB Online Registration</h1>
 

@@ -5,6 +5,8 @@ use App\TireRegistration;
 use App\TireRegistrationOfficer;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class TireController extends Controller {
 
@@ -35,7 +37,13 @@ class TireController extends Controller {
             }
         }
 
-        return "DOne tire";
+        // send mail
+        Mail::send('emails.registration-notification', [], function ($m) {
+            $m->from('donotreply@recyclenb.com', 'REgistration');
+            $m->to('info@recyclenb.com')->subject('Online registration form completed');
+        });
+
+        return Redirect::to('/confirmation');
     }
 }
 

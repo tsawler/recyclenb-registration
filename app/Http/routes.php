@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/changelanguage', 'LanguageController@getChangeLanguage');
+
 Route::get('/', function(){
     return view('index');
 });
@@ -68,3 +70,7 @@ Route::get('/tire-program', function () {
 });
 
 Route::post('/tire-program', 'TireController@postTire');
+
+Route::get('/confirmation', function(){
+    return View::make('confirmation');
+});

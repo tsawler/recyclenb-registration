@@ -47,5 +47,9 @@ return [
     'next'                      => 'Next...',
     'signature'                 => 'Signature',
     'signature_blurb'           => 'Please type your full name, which acts as your electronic signature',
+    'confirmation_title'        => 'Confirmation',
+    'confirmation_blurb'        => 'Thank you. This is confirmation of  your registration with Recycle NB.',
+    'language_choice'           => 'Francais',
+    'lang'                      => 'fr',
 
 ];

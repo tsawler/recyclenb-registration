@@ -5,6 +5,8 @@ use App\BrandRegistration;
 use App\BrandRegistrationOfficer;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 
 class OilController extends Controller {
 
@@ -36,7 +38,13 @@ class OilController extends Controller {
             }
         }
 
-        return "DOne";
+        // send mail
+        Mail::send('emails.registration-notification', [], function ($m) {
+            $m->from('donotreply@recyclenb.com', 'REgistration');
+            $m->to('info@recyclenb.com')->subject('Online registration form completed');
+        });
+
+        return Redirect::to('/confirmation');
 
     }
 }
