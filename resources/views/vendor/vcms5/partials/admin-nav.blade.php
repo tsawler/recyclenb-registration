@@ -56,6 +56,23 @@
                 </li>
             @endif
 
+            @if (Auth::user()->hasRole('pages'))
+                @if (Request::segment(2) == 'registrations')
+                    <li class='active'>
+                @else
+                    <li>
+                    @endif
+                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Registrations</span><span
+                                class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="/admin/registrations/all-brand-registrations">All brand registrations</a></li>
+                        <li><a href="/admin/registrations/registration?id=0">Add brand registration</a></li>
+                        <li><a href="/admin/registrations/all-tire-registrations">All tire registrations</a></li>
+                        <li><a href="/admin/registrations/add-tire-registration?id=0">Add tire registration</a></li>
+                    </ul>
+                </li>
+            @endif
+
             @if (Auth::user()->hasRole('events'))
                 @if (Request::segment(2) == 'calendar')
                     <li class='active'>

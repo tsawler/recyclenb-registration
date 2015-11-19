@@ -37,6 +37,6 @@ class TireRegistration extends Model {
 
     public function officers()
     {
-        return $this->hasMany('TireRegistrationOfficer');
+        return $this->hasMany('App\TireRegistrationOfficer');
     }
 }

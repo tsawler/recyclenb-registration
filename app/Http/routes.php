@@ -106,6 +106,14 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::get('/admin/page/deletepage', '\Tsawler\Vcms5\controllers\VcmsPageController@getDeletePage');
         });
 
+        Route:: group(array('middleware' => 'auth.pages'), function () // make sure admin
+        {
+            // registrations
+            Route::get('/admin/registrations/all-brand-registrations', '\App\Http\Controllers\AdminOilController@allRegistrations');
+            Route::get('/admin/registrations/registration', '\App\Http\Controllers\AdminOilController@getRegistration');
+            Route::get('/admin/registrations/delete-brand-registration-officer', '\App\Http\Controllers\AdminOilController@deleteOfficer');
+        });
+
         Route:: group(array('middleware' => 'auth.events'), function () // make sure admin
         {
             // events

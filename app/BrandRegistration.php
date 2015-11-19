@@ -36,7 +36,7 @@ class BrandRegistration extends Model
 
     public function officers()
     {
-        return $this->hasMany('BrandRegistrationOfficer');
+        return $this->hasMany('App\BrandRegistrationOfficer');
     }
 
 }
