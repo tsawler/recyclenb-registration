@@ -60,7 +60,7 @@ Route::get('/brand-registration/{type}', function () {
     return view('oil');
 });
 
-Route::post('/brand-registration/{type}', 'OilController@postOil');
+Route::post('/brand-registration', 'OilController@postOil');
 
 
 Route::get('/tire-program', function () {

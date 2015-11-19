@@ -8,7 +8,7 @@
         <h1>{!! Lang::get('forms.form_title') !!}</h1>
         <h2>{!! $title !!}</h2>
         <hr>
-        {!! Form::open(array('url' => '/oil-and-glycol-program', 'method' => 'post', 'id' => 'bookform', 'name' => 'bookform')) !!}
+        {!! Form::open(array('url' => '/brand-registration', 'method' => 'post', 'id' => 'bookform', 'name' => 'bookform')) !!}
             @include('forms.oil-form')
         {!! Form::close() !!}
     </div>
