@@ -41,6 +41,7 @@
                     .removeClass('hidden');
             $(newDiv).addClass('duplicate');
             $(newDiv).attr('id', "");
+            $(newDiv).find("input[type='text']").val("");
             newDiv.insertAfter("#corp");
 
         }
