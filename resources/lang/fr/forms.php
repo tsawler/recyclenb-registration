@@ -45,5 +45,7 @@ return [
     'salvage_yard'              => 'Dépot de récupération',
     'other'                     => 'Autre',
     'next'                      => 'Suivant...',
+    'signature'                 => 'Signature',
+    'signature_blurb'           => 'S\'il vous plaît entrez votre nom complet, qui agit comme votre signature électronique',
 
 ];

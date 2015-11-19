@@ -45,5 +45,7 @@ return [
     'salvage_yard'              => 'Salvage Yard',
     'other'                     => 'Other',
     'next'                      => 'Next...',
+    'signature'                 => 'Signature',
+    'signature_blurb'           => 'Please type your full name, which acts as your electronic signature',
 
 ];
