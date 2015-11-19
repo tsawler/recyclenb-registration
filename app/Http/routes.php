@@ -18,22 +18,49 @@ Route::get('/', function(){
 
 Route::post('/', function() {
 
-    $target = Input::get('r');
+    $type = Input::get('r');
 
-    switch ($target) {
+    switch ($type) {
 
-        case 1:
-            return Redirect::to('/oil-and-glycol-program');
+        case 1 :
+            $title = "Oil and Glycol Program";
+            $title_fr = "Oil and Glycol Program";
+            return View::make('oil')
+                ->with('title', $title)
+                ->with('title_fr', $title_fr)
+                ->with('type', $type);
+            break;
+
+        case 2 :
+            $title = "Paint Program";
+            $title_fr = "Paint Program";
+            return View::make('oil')
+                ->with('title', $title)
+                ->with('title_fr', $title_fr)
+                ->with('type', $type);
+            break;
+
+        case 3 :
+            $title = "Electronics Program";
+            $title_fr = "Electroics Program";
+            return View::make('oil')
+            ->with('title', $title)
+            ->with('title_fr', $title_fr)
+            ->with('type', $type);
+            break;
+
+        case 4 :
+            return View::make('tires');
             break;
 
     }
 });
 
-Route::get('/oil-and-glycol-program', function () {
+Route::get('/brand-registration/{type}', function () {
     return view('oil');
 });
 
-Route::post('/oil-and-glycol-program', 'OilController@postOil');
+Route::post('/brand-registration/{type}', 'OilController@postOil');
 
 
 Route::get('/tire-program', function () {

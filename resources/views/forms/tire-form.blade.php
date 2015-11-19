@@ -194,282 +194,101 @@
 
 <h3>{!! Lang::get('forms.corp_blurb') !!}</h3>
 
-<h4>{!! Lang::get('forms.officer') !!} #1</h4>
-<div class="form-group">
-    <label for="officer_1_name">{!! Lang::get('forms.name') !!}</label>
-    {!! Form::text('officer_1_name', null, ['id' => 'officer_1_name', 'class' => 'form-control']) !!}
-</div>
+<div id="corp" class="top-div">
+    <h4>{!! Lang::get('forms.officer') !!} <a href="#!" class="text-danger hidden remove remove-button">Delete this officer</a></h4>
+    <div class="form-group">
+        <label for="officer_name">{!! Lang::get('forms.name') !!}</label>
+        {!! Form::text('officer_name[]', null, ['id' => 'officer_name', 'class' => 'form-control']) !!}
+    </div>
 
-<div class="form-group">
-    <label for="officer_1_title">{!! Lang::get('forms.title') !!}</label>
-    {!! Form::text('officer_1_title', null, ['id' => 'officer_1_title', 'class' => 'form-control']) !!}
-</div>
+    <div class="form-group">
+        <label for="officer_title">{!! Lang::get('forms.title') !!}</label>
+        {!! Form::text('officer_title[]', null, ['id' => 'officer_title', 'class' => 'form-control']) !!}
+    </div>
 
-<div class="form-group">
-    <label for="officer_1_address">{!! Lang::get('forms.address_of_residence') !!}</label>
-    {!! Form::text('officer_1_address', null, ['id' => 'officer_1_address', 'class' => 'form-control']) !!}
-</div>
+    <div class="form-group">
+        <label for="officer_address">{!! Lang::get('forms.address_of_residence') !!}</label>
+        {!! Form::text('officer_address[]', null, ['id' => 'officer_address', 'class' => 'form-control']) !!}
+    </div>
 
-<div class="form-group">
-    <label for="officer_1_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_1_province', [
-							"AB" => "Alberta",
-                            "BC" => "British Columbia",
-                            "MB" => "Manitoba",
-                            "NB" => "New Brunswick",
-                            "NL" => "Newfoundland and Labrador",
-                            "NS" => "Nova Scotia",
-                            "NT" => "Northwest Territories",
-                            "NU" => "Nunavut",
-                            "ON" => "Ontario",
-                            "PE" => "Prince Edward Island",
-                            "QC" => "Quebec",
-                            "SK" => "Saskatchewan",
-                            "YT" => "Yukon",
-                            "AL" => "Alabama",
-                            "AK" => "Alaska",
-                            "AZ" => "Arizona",
-                            "AR" => "Arkansas",
-                            "CA" => "California",
-                            "CO" => "Colorado",
-                            "CT" => "Connecticut",
-                            "DE" => "Delaware",
-                            "DC" => "District Of Columbia",
-                            "FL" => "Florida",
-                            "GA" => "Georgia",
-                            "HI" => "Hawaii",
-                            "ID" => "Idaho",
-                            "IL" => "Illinois",
-                            "IN" => "Indiana",
-                            "IA" => "Iowa",
-                            "KS" => "Kansas",
-                            "KY" => "Kentucky",
-                            "LA" => "Louisiana",
-                            "ME" => "Maine",
-                            "MD" => "Maryland",
-                            "MA" => "Massachusetts",
-                            "MI" => "Michigan",
-                            "MN" => "Minnesota",
-                            "MS" => "Mississippi",
-                            "MO" => "Missouri",
-                            "MT" => "Montana",
-                            "NE" => "Nebraska",
-                            "NV" => "Nevada",
-                            "NH" => "New Hampshire",
-                            "NJ" => "New Jersey",
-                            "NM" => "New Mexico",
-                            "NY" => "New York",
-                            "NC" => "North Carolina",
-                            "ND" => "North Dakota",
-                            "OH" => "Ohio",
-                            "OK" => "Oklahoma",
-                            "OR" => "Oregon",
-                            "PA" => "Pennsylvania",
-                            "RI" => "Rhode Island",
-                            "SC" => "South Carolina",
-                            "SD" => "South Dakota",
-                            "TN" => "Tennessee",
-                            "TX" => "Texas",
-                            "UT" => "Utah",
-                            "VT" => "Vermont",
-                            "VA" => "Virginia",
-                            "WA" => "Washington",
-                            "WV" => "West Virginia",
-                            "WI" => "Wisconsin",
-                            "WY" => "Wyoming"],
-							null,
-							['class' => 'form-control']) !!}
-</div>
+    <div class="form-group">
+        <label for="officer_province">{!! Lang::get('forms.province_state') !!}</label>
+        {!! Form::select('officer_province[]', array(
+                                "AB" => "Alberta",
+                                "BC" => "British Columbia",
+                                "MB" => "Manitoba",
+                                "NB" => "New Brunswick",
+                                "NL" => "Newfoundland and Labrador",
+                                "NS" => "Nova Scotia",
+                                "NT" => "Northwest Territories",
+                                "NU" => "Nunavut",
+                                "ON" => "Ontario",
+                                "PE" => "Prince Edward Island",
+                                "QC" => "Quebec",
+                                "SK" => "Saskatchewan",
+                                "YT" => "Yukon",
+                                "AL" => "Alabama",
+                                "AK" => "Alaska",
+                                "AZ" => "Arizona",
+                                "AR" => "Arkansas",
+                                "CA" => "California",
+                                "CO" => "Colorado",
+                                "CT" => "Connecticut",
+                                "DE" => "Delaware",
+                                "DC" => "District Of Columbia",
+                                "FL" => "Florida",
+                                "GA" => "Georgia",
+                                "HI" => "Hawaii",
+                                "ID" => "Idaho",
+                                "IL" => "Illinois",
+                                "IN" => "Indiana",
+                                "IA" => "Iowa",
+                                "KS" => "Kansas",
+                                "KY" => "Kentucky",
+                                "LA" => "Louisiana",
+                                "ME" => "Maine",
+                                "MD" => "Maryland",
+                                "MA" => "Massachusetts",
+                                "MI" => "Michigan",
+                                "MN" => "Minnesota",
+                                "MS" => "Mississippi",
+                                "MO" => "Missouri",
+                                "MT" => "Montana",
+                                "NE" => "Nebraska",
+                                "NV" => "Nevada",
+                                "NH" => "New Hampshire",
+                                "NJ" => "New Jersey",
+                                "NM" => "New Mexico",
+                                "NY" => "New York",
+                                "NC" => "North Carolina",
+                                "ND" => "North Dakota",
+                                "OH" => "Ohio",
+                                "OK" => "Oklahoma",
+                                "OR" => "Oregon",
+                                "PA" => "Pennsylvania",
+                                "RI" => "Rhode Island",
+                                "SC" => "South Carolina",
+                                "SD" => "South Dakota",
+                                "TN" => "Tennessee",
+                                "TX" => "Texas",
+                                "UT" => "Utah",
+                                "VT" => "Vermont",
+                                "VA" => "Virginia",
+                                "WA" => "Washington",
+                                "WV" => "West Virginia",
+                                "WI" => "Wisconsin",
+                                "WY" => "Wyoming"),
+                                null,
+                                array('class' => 'form-control')) !!}
+    </div>
 
-<div class="form-group">
-    <label for="officer_1_zip">{!! Lang::get('forms.zip') !!}</label>
-    {!! Form::text('officer_1_zip', null, ['id' => 'officer_1_zip', 'class' => 'form-control']) !!}
+    <div class="form-group">
+        <label for="officer_zip">{!! Lang::get('forms.zip') !!}</label>
+        {!! Form::text('officer_zip[]', null, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
+    </div>
 </div>
+<a class="btn btn-primary" onclick="addOfficer()">Add an Officer</a>
 
-<h4>{!! Lang::get('forms.officer') !!} #2</h4>
-<div class="form-group">
-    <label for="officer_2_name">{!! Lang::get('forms.name') !!}</label>
-    {!! Form::text('officer_2_name', null, ['id' => 'officer_2_name', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_2_title">{!! Lang::get('forms.title') !!}</label>
-    {!! Form::text('officer_2_title', null, ['id' => 'officer_2_title', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_2_address">{!! Lang::get('forms.address_of_residence') !!}</label>
-    {!! Form::text('officer_2_address', null, ['id' => 'officer_2_address', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_2_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_2_province', [
-							"AB" => "Alberta",
-                            "BC" => "British Columbia",
-                            "MB" => "Manitoba",
-                            "NB" => "New Brunswick",
-                            "NL" => "Newfoundland and Labrador",
-                            "NS" => "Nova Scotia",
-                            "NT" => "Northwest Territories",
-                            "NU" => "Nunavut",
-                            "ON" => "Ontario",
-                            "PE" => "Prince Edward Island",
-                            "QC" => "Quebec",
-                            "SK" => "Saskatchewan",
-                            "YT" => "Yukon",
-                            "AL" => "Alabama",
-                            "AK" => "Alaska",
-                            "AZ" => "Arizona",
-                            "AR" => "Arkansas",
-                            "CA" => "California",
-                            "CO" => "Colorado",
-                            "CT" => "Connecticut",
-                            "DE" => "Delaware",
-                            "DC" => "District Of Columbia",
-                            "FL" => "Florida",
-                            "GA" => "Georgia",
-                            "HI" => "Hawaii",
-                            "ID" => "Idaho",
-                            "IL" => "Illinois",
-                            "IN" => "Indiana",
-                            "IA" => "Iowa",
-                            "KS" => "Kansas",
-                            "KY" => "Kentucky",
-                            "LA" => "Louisiana",
-                            "ME" => "Maine",
-                            "MD" => "Maryland",
-                            "MA" => "Massachusetts",
-                            "MI" => "Michigan",
-                            "MN" => "Minnesota",
-                            "MS" => "Mississippi",
-                            "MO" => "Missouri",
-                            "MT" => "Montana",
-                            "NE" => "Nebraska",
-                            "NV" => "Nevada",
-                            "NH" => "New Hampshire",
-                            "NJ" => "New Jersey",
-                            "NM" => "New Mexico",
-                            "NY" => "New York",
-                            "NC" => "North Carolina",
-                            "ND" => "North Dakota",
-                            "OH" => "Ohio",
-                            "OK" => "Oklahoma",
-                            "OR" => "Oregon",
-                            "PA" => "Pennsylvania",
-                            "RI" => "Rhode Island",
-                            "SC" => "South Carolina",
-                            "SD" => "South Dakota",
-                            "TN" => "Tennessee",
-                            "TX" => "Texas",
-                            "UT" => "Utah",
-                            "VT" => "Vermont",
-                            "VA" => "Virginia",
-                            "WA" => "Washington",
-                            "WV" => "West Virginia",
-                            "WI" => "Wisconsin",
-                            "WY" => "Wyoming"],
-							null,
-							['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_2_zip">{!! Lang::get('forms.zip') !!}</label>
-    {!! Form::text('officer_2_zip', null, ['id' => 'officer_2_zip', 'class' => 'form-control']) !!}
-</div>
-
-
-<h4>{!! Lang::get('forms.officer') !!} #3</h4>
-<div class="form-group">
-    <label for="officer_3_name">{!! Lang::get('forms.name') !!}</label>
-    {!! Form::text('officer_3_name', null, ['id' => 'officer_3_name', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_3_title">{!! Lang::get('forms.title') !!}</label>
-    {!! Form::text('officer_3_title', null, ['id' => 'officer_3_title', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_3_address">{!! Lang::get('forms.address_of_residence') !!}</label>
-    {!! Form::text('officer_3_address', null, ['id' => 'officer_3_address', 'class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_3_province">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('officer_3_province', [
-							"AB" => "Alberta",
-                            "BC" => "British Columbia",
-                            "MB" => "Manitoba",
-                            "NB" => "New Brunswick",
-                            "NL" => "Newfoundland and Labrador",
-                            "NS" => "Nova Scotia",
-                            "NT" => "Northwest Territories",
-                            "NU" => "Nunavut",
-                            "ON" => "Ontario",
-                            "PE" => "Prince Edward Island",
-                            "QC" => "Quebec",
-                            "SK" => "Saskatchewan",
-                            "YT" => "Yukon",
-                            "AL" => "Alabama",
-                            "AK" => "Alaska",
-                            "AZ" => "Arizona",
-                            "AR" => "Arkansas",
-                            "CA" => "California",
-                            "CO" => "Colorado",
-                            "CT" => "Connecticut",
-                            "DE" => "Delaware",
-                            "DC" => "District Of Columbia",
-                            "FL" => "Florida",
-                            "GA" => "Georgia",
-                            "HI" => "Hawaii",
-                            "ID" => "Idaho",
-                            "IL" => "Illinois",
-                            "IN" => "Indiana",
-                            "IA" => "Iowa",
-                            "KS" => "Kansas",
-                            "KY" => "Kentucky",
-                            "LA" => "Louisiana",
-                            "ME" => "Maine",
-                            "MD" => "Maryland",
-                            "MA" => "Massachusetts",
-                            "MI" => "Michigan",
-                            "MN" => "Minnesota",
-                            "MS" => "Mississippi",
-                            "MO" => "Missouri",
-                            "MT" => "Montana",
-                            "NE" => "Nebraska",
-                            "NV" => "Nevada",
-                            "NH" => "New Hampshire",
-                            "NJ" => "New Jersey",
-                            "NM" => "New Mexico",
-                            "NY" => "New York",
-                            "NC" => "North Carolina",
-                            "ND" => "North Dakota",
-                            "OH" => "Ohio",
-                            "OK" => "Oklahoma",
-                            "OR" => "Oregon",
-                            "PA" => "Pennsylvania",
-                            "RI" => "Rhode Island",
-                            "SC" => "South Carolina",
-                            "SD" => "South Dakota",
-                            "TN" => "Tennessee",
-                            "TX" => "Texas",
-                            "UT" => "Utah",
-                            "VT" => "Vermont",
-                            "VA" => "Virginia",
-                            "WA" => "Washington",
-                            "WV" => "West Virginia",
-                            "WI" => "Wisconsin",
-                            "WY" => "Wyoming"],
-							null,
-							['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group">
-    <label for="officer_3_zip">{!! Lang::get('forms.zip') !!}</label>
-    {!! Form::text('officer_3_zip', null, ['id' => 'officer_3_zip', 'class' => 'form-control']) !!}
-</div>
 
 
 <h3>{!! Lang::get('forms.contact_blurb') !!}</h3>

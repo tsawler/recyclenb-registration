@@ -6,7 +6,7 @@
 
     <div class="col-md-8">
         <h1>{!! Lang::get('forms.form_title') !!}</h1>
-        <h2>{!! Lang::get('forms.oil_program') !!}</h2>
+        <h2>{!! $title !!}</h2>
         <hr>
         {!! Form::open(array('url' => '/oil-and-glycol-program', 'method' => 'post', 'id' => 'bookform', 'name' => 'bookform')) !!}
             @include('forms.oil-form')
