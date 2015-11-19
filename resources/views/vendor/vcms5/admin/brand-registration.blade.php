@@ -26,7 +26,9 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
-                        <li role="presentation"><a href="#officers" aria-controls="officers" role="tab" data-toggle="tab">Officers</a></li>
+                        @if($registration->id > 0)
+                            <li role="presentation"><a href="#officers" aria-controls="officers" role="tab" data-toggle="tab">Officers</a></li>
+                        @endif
                     </ul>
 
                     <div class="tab-content">
@@ -437,8 +439,8 @@
 
                         </div>
 
-
-                        <div role="tabpanel" class="tab-pane" id="officers">
+                        @if($registration->id > 0)
+                            <div role="tabpanel" class="tab-pane" id="officers">
                             {!! Form::open(['url' => '/admin/registrations/brand-officers', 'method' => 'post']) !!}
 
                             @foreach($officers as $index => $officer)
@@ -541,6 +543,7 @@
                             {!! Form::hidden('brand_registration_id', $registration->id) !!}
                             {!! Form::close() !!}
                         </div>
+                        @endif
                     </div>
                 </div>
 

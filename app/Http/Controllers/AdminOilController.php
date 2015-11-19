@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 use App\BrandRegistration;
 use App\BrandRegistrationOfficer;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 
+/**
+ * Class AdminOilController
+ * @package App\Http\Controllers
+ */
 class AdminOilController extends Controller {
 
+    /**
+     * @return mixed
+     */
     public function allRegistrations()
     {
 
@@ -22,16 +27,29 @@ class AdminOilController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function getRegistration()
     {
-        $registration = BrandRegistration::findOrFail(Input::get('id'));
-        $officers = BrandRegistrationOfficer::where('brand_registration_id', '=', Input::get('id'))->get();
+
+        if (Input::get('id') > 0) {
+            $registration = BrandRegistration::findOrFail(Input::get('id'));
+            $officers = BrandRegistrationOfficer::where('brand_registration_id', '=', Input::get('id'))->get();
+        } else {
+            $registration = new BrandRegistration();
+            $officers = [];
+        }
 
         return View::make('vcms5::admin.brand-registration')
             ->with('registration', $registration)
             ->with('officers', $officers);
     }
 
+
+    /**
+     * @return mixed
+     */
     public function deleteOfficer()
     {
         $registration_id = Input::get('rid');
