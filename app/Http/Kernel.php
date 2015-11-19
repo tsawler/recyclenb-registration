@@ -30,5 +30,15 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+
+        'auth.admin'     => \Tsawler\Vcms5\Middleware\RedirectIfNotAdminMiddleware::class,
+        'auth.pages'     => \Tsawler\Vcms5\Middleware\RedirectIfNotPagesAdminMiddleware::class,
+        'auth.blogs'     => \Tsawler\Vcms5\Middleware\RedirectIfNotBlogsAdminMiddleware::class,
+        'auth.events'    => \Tsawler\Vcms5\Middleware\RedirectIfNotEventsAdminMiddleware::class,
+        'auth.news'      => \Tsawler\Vcms5\Middleware\RedirectIfNotNewsAdminMiddleware::class,
+        'auth.faqs'      => \Tsawler\Vcms5\Middleware\RedirectIfNotFaqsAdminMiddleware::class,
+        'auth.galleries' => \Tsawler\Vcms5\Middleware\RedirectIfNotGalleriesAdminMiddleware::class,
+        'auth.menus'     => \Tsawler\Vcms5\Middleware\RedirectIfNotMenusAdminMiddleware::class,
+        'auth.users'     => \Tsawler\Vcms5\Middleware\RedirectIfNotUsersAdminMiddleware::class,
     ];
 }
