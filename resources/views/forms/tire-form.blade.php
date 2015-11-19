@@ -543,6 +543,12 @@
     {!! Form::text('agent_phone', null, ['id' => 'agent_phone', 'class' => 'form-control']) !!}
 </div>
 
+<h3>{!! Lang::get('forms.signature') !!}</h3>
+<div class="form-group">
+    <label for="signature">{!! Lang::get('forms.signature_blurb') !!}</label>
+    {!! Form::text('signature', null, ['id' => 'signature', 'class' => 'form-control required']) !!}
+</div>
+
 <hr>
 <div class="form-group">
     <div class="controls">
