@@ -280,7 +280,7 @@
 
 
 
-<h3>{!! Lang::get('forms.contact_blurb') !!}:</h3>
+<h3>{!! Lang::get('forms.contact_blurb') !!}</h3>
 
 <div class="form-group">
     <label for="contact_name">{!! Lang::get('forms.name') !!}</label>
