@@ -11,6 +11,24 @@
 |
 */
 
+Route::get('/', function(){
+    return view('index');
+});
+
+
+Route::post('/', function() {
+
+    $target = Input::get('r');
+
+    switch ($target) {
+
+        case 1:
+            return Redirect::to('/oil-and-glycol-program');
+            break;
+
+    }
+});
+
 Route::get('/oil-and-glycol-program', function () {
     return view('oil');
 });

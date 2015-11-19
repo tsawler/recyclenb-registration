@@ -44,5 +44,6 @@ return [
     'towing_company'            => 'Towing Company',
     'salvage_yard'              => 'Salvage Yard',
     'other'                     => 'Other',
+    'next'                      => 'Next...',
 
 ];

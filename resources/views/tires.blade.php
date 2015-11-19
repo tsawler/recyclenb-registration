@@ -8,7 +8,7 @@
         <h1>{!! Lang::get('forms.tire_program') !!}</h1>
         <hr>
         {!! Form::open(array('url' => '/tire-program', 'method' => 'post', 'id' => 'bookform', 'name' => 'bookform')) !!}
-        @include('forms.tire-form')
+            @include('forms.tire-form')
         {!! Form::close() !!}
     </div>
 

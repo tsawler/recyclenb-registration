@@ -34,5 +34,20 @@
                 }
             });
         });
+
+        function addOfficer() {
+            var newDiv = $("#corp").clone(true);
+            $(newDiv).find('.remove-button')
+                    .removeClass('hidden');
+            $(newDiv).addClass('duplicate');
+            $(newDiv).attr('id', "");
+            newDiv.insertAfter("#corp");
+
+        }
+
+        $(".remove").click(function(e) {
+            $(this).closest(".duplicate").remove();
+            e.preventDefault();
+        });
     </script>
 @stop

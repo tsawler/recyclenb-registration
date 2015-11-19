@@ -44,5 +44,6 @@ return [
     'towing_company'            => 'entreprise de remorquage',
     'salvage_yard'              => 'Dépot de récupération',
     'other'                     => 'Autre',
+    'next'                      => 'Suivant...',
 
 ];
