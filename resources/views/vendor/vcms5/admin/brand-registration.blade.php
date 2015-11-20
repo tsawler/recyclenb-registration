@@ -34,7 +34,11 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="registration">
 
-                            {!! Form::model($registration, ['url' => '/admin/registrations/registration']) !!}
+                            {!! Form::model($registration, [
+                                'url' => '/admin/registrations/registration',
+                                'name' => 'bookform',
+                                'id' => 'bookform',
+                                ]) !!}
 
                             {!! Form::hidden('type', null) !!}
 
@@ -429,11 +433,12 @@
                             <hr>
                             <div class="form-group">
                                 <div class="controls">
-                                    {!!  Form::submit(Lang::get('forms.register'), array('class' => 'btn btn-primary')) !!}
+                                    {!!  Form::submit("Save", array('class' => 'btn btn-primary')) !!}
+                                    <a href="#!" onclick="saveAndContinue()" class="btn btn-info">Save and Continue</a>
                                 </div>
                             </div>
                             <br><br>
-
+                            <input type="hidden" id="action" name="action" value="0">
                             {!! Form::hidden('id', $registration->id) !!}
                             {!! Form::close() !!}
 
@@ -566,6 +571,12 @@
                     window.location.href = '/admin/registrations/delete-brand-registration-officer?rid={!! $registration->id !!}&id='+x;
                 }
             });
+        }
+
+        function saveAndContinue()
+        {
+            $("#action").val(1);
+            $("#bookform").submit();
         }
 
     </script>

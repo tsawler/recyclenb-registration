@@ -73,7 +73,11 @@ class AdminOilController extends Controller {
             $registration->save();
         }
 
-        return Redirect::to('/admin/registrations/registration?id=' . Input::get('id'));
+        if (Input::get('action') == 1) {
+            return Redirect::to('/admin/registrations/registration?id=' . Input::get('id'));
+        } else {
+            return Redirect::to('/admin/registrations/all-brand-registrations');
+        }
 
     }
 }
