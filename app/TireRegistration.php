@@ -4,8 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TireRegistration
+ * @package App
+ */
 class TireRegistration extends Model {
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name_of_applicant',
         'sell_tires',
@@ -36,6 +43,9 @@ class TireRegistration extends Model {
         'signature',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function officers()
     {
         return $this->hasMany('App\TireRegistrationOfficer');
