@@ -4,9 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class BrandRegistration
+ * @package App
+ */
 class BrandRegistration extends Model
 {
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name_of_applicant',
         'type',
@@ -35,12 +42,19 @@ class BrandRegistration extends Model
         'signature',
     ];
 
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function officers()
     {
         return $this->hasMany('App\BrandRegistrationOfficer');
     }
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function brandType()
     {
         return $this->hasOne('App\BrandType', 'id', 'type');
