@@ -80,5 +80,15 @@ class AdminOilController extends Controller {
         }
 
     }
+
+
+    public function updateOfficers()
+    {
+        if (Input::get('action') == 1) {
+            return Redirect::to('/admin/registrations/registration?id=' . Input::get('id') . "&tab=officers");
+        } else {
+            return Redirect::to('/admin/registrations/all-brand-registrations');
+        }
+    }
 }
 

@@ -25,14 +25,28 @@
                 <div role="tabpanel">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
+                        <li role="presentation"
+                            @if(! Input::has('tab'))
+                                class="active"
+                            @endif
+                        ><a href="#registration" aria-controls="registration" role="tab" data-toggle="tab">Registration</a></li>
                         @if($registration->id > 0)
-                            <li role="presentation"><a href="#officers" aria-controls="officers" role="tab" data-toggle="tab">Officers</a></li>
+                            <li role="presentation"
+                                @if((Input::has('tab')) && (Input::get('tab') == 'officers'))
+                                    class="active"
+                                @endif
+                            ><a href="#officers" aria-controls="officers" role="tab" data-toggle="tab">Officers</a></li>
                         @endif
                     </ul>
 
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="registration">
+                        <div role="tabpanel"
+                        @if(! Input::has('tab'))
+                                class="tab-pane active"
+                         @else
+                                 class="tab-pane"
+                        @endif
+                        id="registration">
 
                             {!! Form::model($registration, [
                                 'url' => '/admin/registrations/registration',
@@ -445,8 +459,14 @@
                         </div>
 
                         @if($registration->id > 0)
-                            <div role="tabpanel" class="tab-pane" id="officers">
-                            {!! Form::open(['url' => '/admin/registrations/brand-officers', 'method' => 'post']) !!}
+                            <div role="tabpanel"
+                                 @if((Input::has('tab')) && (Input::get('tab') == 'officers'))
+                                 class="tab-pane active"
+                                 @else
+                                         class="tab-pane"
+                                 @endif
+                                 id="officers">
+                            {!! Form::open(['id' => 'officerform', 'name' => 'officerform', 'url' => '/admin/registrations/brand-officers', 'method' => 'post']) !!}
 
                             @foreach($officers as $index => $officer)
 
@@ -545,6 +565,17 @@
                                 <hr>
                             @endforeach
 
+                            <hr>
+                            <div class="form-group">
+                                <div class="controls">
+                                    {!!  Form::submit("Save", array('class' => 'btn btn-primary')) !!}
+                                    <a href="#!" onclick="saveAndContinueOfficers()" class="btn btn-info">Save and Continue</a>
+                                </div>
+                            </div>
+                            <br><br>
+                            <input type="hidden" id="oaction" name="action" value="0">
+
+
                             {!! Form::hidden('id', $registration->id) !!}
                             {!! Form::close() !!}
                         </div>
@@ -577,6 +608,12 @@
         {
             $("#action").val(1);
             $("#bookform").submit();
+        }
+
+        function saveAndContinueOfficers()
+        {
+            $("#oaction").val(1);
+            $("#officerform").submit();
         }
 
     </script>
