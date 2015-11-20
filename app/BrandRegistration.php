@@ -39,4 +39,10 @@ class BrandRegistration extends Model
         return $this->hasMany('App\BrandRegistrationOfficer');
     }
 
+
+    public function brandType()
+    {
+        return $this->hasOne('App\BrandType', 'id', 'type');
+    }
+
 }

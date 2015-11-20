@@ -434,7 +434,7 @@
                             </div>
                             <br><br>
 
-
+                            {!! Form::hidden('id', $registration->id) !!}
                             {!! Form::close() !!}
 
                         </div>
@@ -540,7 +540,7 @@
                                 <hr>
                             @endforeach
 
-                            {!! Form::hidden('brand_registration_id', $registration->id) !!}
+                            {!! Form::hidden('id', $registration->id) !!}
                             {!! Form::close() !!}
                         </div>
                         @endif

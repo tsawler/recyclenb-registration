@@ -111,6 +111,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             // registrations
             Route::get('/admin/registrations/all-brand-registrations', '\App\Http\Controllers\AdminOilController@allRegistrations');
             Route::get('/admin/registrations/registration', '\App\Http\Controllers\AdminOilController@getRegistration');
+            Route::post('/admin/registrations/registration', '\App\Http\Controllers\AdminOilController@postRegistration');
             Route::get('/admin/registrations/delete-brand-registration-officer', '\App\Http\Controllers\AdminOilController@deleteOfficer');
         });
 

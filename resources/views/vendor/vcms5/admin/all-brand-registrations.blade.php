@@ -25,6 +25,7 @@
                 <thead>
                 <tr>
                     <th>Registration</th>
+                    <th>Type</th>
                     <th>Created</th>
                     <th>Updated</th>
                 </tr>
@@ -33,6 +34,7 @@
                 @foreach ($allregistrations as $registration)
                 <tr>
                     <td><a href="/admin/registrations/registration?id={!! $registration->id!!}">{!! $registration->name_of_applicant !!}</a></td>
+                    <td>{!! $registration->brandType->brand_name !!}</td>
                     <td>{!! $registration->created_at !!}</td>
                     <td>{!! $registration->updated_at !!}</td>
                 </tr>

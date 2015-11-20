@@ -59,5 +59,22 @@ class AdminOilController extends Controller {
         return Redirect::to('/admin/registrations/registration?id=' . $registration_id)
             ->with('message', 'Officer deleted');
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function postRegistration()
+    {
+        if (Input::get('id') > 0) {
+            $registration = BrandRegistration::find(Input::get('id'));
+            $registration->fill(Input::all());
+            //$registration->ip_address = Request::getClientIp();
+            $registration->save();
+        }
+
+        return Redirect::to('/admin/registrations/registration?id=' . Input::get('id'));
+
+    }
 }
 
