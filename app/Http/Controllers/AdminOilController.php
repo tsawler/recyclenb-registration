@@ -69,7 +69,6 @@ class AdminOilController extends Controller {
         if (Input::get('id') > 0) {
             $registration = BrandRegistration::find(Input::get('id'));
             $registration->fill(Input::all());
-            //$registration->ip_address = Request::getClientIp();
             $registration->save();
         }
 
@@ -82,6 +81,9 @@ class AdminOilController extends Controller {
     }
 
 
+    /**
+     * @return mixed
+     */
     public function updateOfficers()
     {
         if (Input::get('action') == 1) {

@@ -33,6 +33,7 @@ class TireRegistration extends Model {
         'agent_zip',
         'agent_phone',
         'agent_email',
+        'signature',
     ];
 
     public function officers()
