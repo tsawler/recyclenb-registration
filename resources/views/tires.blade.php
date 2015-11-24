@@ -49,5 +49,19 @@
             $(this).closest(".duplicate").remove();
             e.preventDefault();
         });
+
+        $("#same_address").change(function(){
+            if(document.getElementById('same_address').checked) {
+                $("#nb_physical_location").val($("#head_physical_location").val());
+                $("#nb_mailing_address").val($("#head_mailing_address").val());
+                $("#nb_province_state").val($("#head_province_state").val());
+                $("#nb_zip").val($("#head_zip").val());
+            } else {
+                $("#nb_physical_location").val('');
+                $("#nb_mailing_address").val('');
+                $("#nb_province_state").val('');
+                $("#nb_zip").val('');
+            }
+        });
     </script>
 @stop

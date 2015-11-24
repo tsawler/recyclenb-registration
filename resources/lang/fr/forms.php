@@ -51,5 +51,6 @@ return [
     'confirmation_blurb'        => 'Thank you. This is confirmation of  your registration with Recycle NB.',
     'language_choice'           => 'English',
     'lang'                      => 'en',
+    'same_address'              => 'Same address as above',
 
 ];

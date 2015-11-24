@@ -152,7 +152,7 @@
                                                         "WI" => "Wisconsin",
                                                         "WY" => "Wyoming"],
                                                         "NB",
-                                                        ['class' => 'form-control']) !!}
+                                                        ['class' => 'form-control', 'id' => 'head_province_state']) !!}
                             </div>
 
                             <div class="form-group">
@@ -161,6 +161,13 @@
                             </div>
 
                             <h2>{!! Lang::get('forms.nb_location_blurb') !!}</h2>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" id="same_address">
+                                    {!! Lang::get('forms.same_address') !!}
+                                </label>
+                            </div>
 
                             <div class="form-group">
                                 <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
@@ -240,7 +247,7 @@
                                                         "WI" => "Wisconsin",
                                                         "WY" => "Wyoming"],
                                                         null,
-                                                        ['class' => 'form-control']) !!}
+                                                        ['class' => 'form-control', 'id' => 'nb_province_state']) !!}
                             </div>
 
                             <div class="form-group">
@@ -250,6 +257,13 @@
 
 
                             <h2>{!! Lang::get('forms.contact_blurb') !!}</h2>
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" id="same_address">
+                                    {!! Lang::get('forms.same_address') !!}
+                                </label>
+                            </div>
 
                             <div class="form-group">
                                 <label for="contact_name">{!! Lang::get('forms.name') !!}</label>
@@ -771,6 +785,20 @@
             $("#oaction").val(1);
             $("#officerform").submit();
         }
+
+        $("#same_address").change(function(){
+            if(document.getElementById('same_address').checked) {
+                $("#nb_physical_location").val($("#head_physical_location").val());
+                $("#nb_mailing_address").val($("#head_mailing_address").val());
+                $("#nb_province_state").val($("#head_province_state").val());
+                $("#nb_zip").val($("#head_zip").val());
+            } else {
+                $("#nb_physical_location").val('');
+                $("#nb_mailing_address").val('');
+                $("#nb_province_state").val('');
+                $("#nb_zip").val('');
+            }
+        });
 
     </script>
 @stop

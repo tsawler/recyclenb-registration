@@ -96,7 +96,7 @@
                             "WI" => "Wisconsin",
                             "WY" => "Wyoming"],
 							"NB",
-							['class' => 'form-control']) !!}
+							['class' => 'form-control', 'id' => 'head_province_state']) !!}
 </div>
 
 <div class="form-group">
@@ -105,6 +105,13 @@
 </div>
 
 <h3>{!! Lang::get('forms.nb_location_blurb') !!}</h3>
+
+<div class="checkbox">
+    <label>
+        <input type="checkbox" value="" id="same_address">
+        {!! Lang::get('forms.same_address') !!}
+    </label>
+</div>
 
 <div class="form-group">
     <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
@@ -184,7 +191,7 @@
                             "WI" => "Wisconsin",
                             "WY" => "Wyoming"],
 							null,
-							['class' => 'form-control']) !!}
+							['class' => 'form-control', 'id' =>'nb_province_state']) !!}
 </div>
 
 <div class="form-group">
