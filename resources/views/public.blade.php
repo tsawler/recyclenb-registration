@@ -12,6 +12,9 @@
 <body>
 <div class="container">
     <div class="row">
+        <img src="/rnb-eng.png" class="img" height="138" width="156">
+    </div>
+    <div class="row">
         @yield('content')
     </div>
 </div>
