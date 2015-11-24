@@ -81,11 +81,38 @@ class AdminOilController extends Controller {
     }
 
 
+
     /**
      * @return mixed
      */
     public function updateOfficers()
     {
+
+        foreach (Input::all() as $name => $value) {
+            if (starts_with($name, "officerid_")) {
+                $id = $value;
+                $officer = BrandRegistrationOfficer::find($id);
+                $officer->officer_name = Input::get('officer_name_' . $id);
+                $officer->officer_title = Input::get('officer_title_' . $id);
+                $officer->officer_address = Input::get('officer_address_' . $id);
+                $officer->officer_province = Input::get('officer_province_' . $id);
+                $officer->officer_zip = Input::get('officer_zip_' . $id);
+                $officer->save();
+            }
+        }
+
+        // check for new officer
+        if (strlen(Input::get('officer_name_0')) > 0) {
+            $officer = new BrandRegistrationOfficer();
+            $officer->officer_name = Input::get('officer_name_0');
+            $officer->officer_title = Input::get('officer_title_0');
+            $officer->officer_address = Input::get('officer_address_0');
+            $officer->officer_province = Input::get('officer_province_0');
+            $officer->officer_zip = Input::get('officer_zip_0');
+            $officer->brand_registration_id = Input::get('id');
+            $officer->save();
+        }
+
         if (Input::get('action') == 1) {
             return Redirect::to('/admin/registrations/registration?id=' . Input::get('id') . "&tab=officers");
         } else {

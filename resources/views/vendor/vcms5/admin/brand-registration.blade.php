@@ -566,7 +566,7 @@
                                     <label for="officer_zip_{!! $officer->id !!}">{!! Lang::get('forms.zip') !!}</label>
                                     {!! Form::text('officer_zip_' . $officer->id, $officer->officer_zip, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
                                 </div>
-
+                                <input type="hidden" name="officerid_{!! $officer->id !!}" value="{!! $officer->id !!}">
                                 <hr>
                             @endforeach
 
