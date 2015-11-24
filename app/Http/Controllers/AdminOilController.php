@@ -56,7 +56,7 @@ class AdminOilController extends Controller {
         $officer_id = Input::get('id');
         BrandRegistrationOfficer::find($officer_id)->delete();
 
-        return Redirect::to('/admin/registrations/registration?id=' . $registration_id)
+        return Redirect::to('/admin/registrations/registration?tab=officers&id=' . $registration_id)
             ->with('message', 'Officer deleted');
     }
 

@@ -61,7 +61,12 @@
                                 {!! Form::text('name_of_applicant', null, ['id' => 'name_of_applicant', 'class' => 'form-control']) !!}
                             </div>
 
-                            <h3>{!! Lang::get('forms.address_head_office') !!}</h3>
+                            <div class="form-group">
+                                <label>Registration Type</label><br>
+                                {!! $registration->brandType->brand_name !!}
+                            </div>
+
+                            <h2>{!! Lang::get('forms.address_head_office') !!}</h2>
 
                             <div class="form-group">
                                 <label for="head_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
@@ -149,7 +154,7 @@
                                 {!! Form::text('head_zip', null, ['id' => 'head_zip', 'class' => 'form-control required']) !!}
                             </div>
 
-                            <h3>{!! Lang::get('forms.nb_location_blurb') !!}</h3>
+                            <h2>{!! Lang::get('forms.nb_location_blurb') !!}</h2>
 
                             <div class="form-group">
                                 <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
@@ -237,7 +242,7 @@
                                 {!! Form::text('nb_zip', null, ['id' => 'nb_zip', 'class' => 'form-control required']) !!}
                             </div>
 
-                            <h3>{!! Lang::get('forms.contact_blurb') !!}</h3>
+                            <h2>{!! Lang::get('forms.contact_blurb') !!}</h2>
 
                             <div class="form-group">
                                 <label for="contact_name">{!! Lang::get('forms.name') !!}</label>
@@ -335,7 +340,7 @@
                                 {!! Form::text('contact_phone', null, ['id' => 'contact_phone', 'class' => 'form-control required']) !!}
                             </div>
 
-                            <h3>{!! Lang::get('forms.agent_blurb') !!}</h3>
+                            <h2>{!! Lang::get('forms.agent_blurb') !!}</h2>
 
                             <div class="form-group">
                                 <label for="agent_name">{!! Lang::get('forms.name') !!}</label>
@@ -438,7 +443,7 @@
                                 {!! Form::text('agent_phone', null, ['id' => 'agent_phone', 'class' => 'form-control']) !!}
                             </div>
 
-                            <h3>{!! Lang::get('forms.signature') !!}</h3>
+                            <h2>{!! Lang::get('forms.signature') !!}</h2>
                             <div class="form-group">
                                 <label for="signature">{!! Lang::get('forms.signature_blurb') !!}</label>
                                 {!! Form::text('signature', null, ['id' => 'signature', 'class' => 'form-control required']) !!}
@@ -472,23 +477,23 @@
 
                                 <h2>{!! Lang::get('forms.officer') !!} # {!! $index + 1 !!} <small><a href="#!" onclick="deleteOfficer({!! $officer->id !!})" class="text-danger remove remove-button">Delete this officer</a></small></h2>
                                 <div class="form-group">
-                                    <label for="officer_name">{!! Lang::get('forms.name') !!}</label>
-                                    {!! Form::text('officer_name[]', $officer->officer_name, ['id' => 'officer_name', 'class' => 'form-control']) !!}
+                                    <label for="officer_name_{!! $officer->id !!}">{!! Lang::get('forms.name') !!}</label>
+                                    {!! Form::text('officer_name_' . $officer->id, $officer->officer_name, ['id' => 'officer_name', 'class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="officer_title">{!! Lang::get('forms.title') !!}</label>
-                                    {!! Form::text('officer_title[]', $officer->officer_title, ['id' => 'officer_title', 'class' => 'form-control']) !!}
+                                    <label for="officer_title_{!! $officer->id !!}">  {!! Lang::get('forms.title') !!}</label>
+                                    {!! Form::text('officer_title_' . $officer->id, $officer->officer_title, ['id' => 'officer_title', 'class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="officer_address">{!! Lang::get('forms.address_of_residence') !!}</label>
-                                    {!! Form::text('officer_address[]', $officer->officer_address, ['id' => 'officer_address', 'class' => 'form-control']) !!}
+                                    <label for="officer_address_{!! $officer->id !!}">{!! Lang::get('forms.address_of_residence') !!}</label>
+                                    {!! Form::text('officer_address_' . $officer->id, $officer->officer_address, ['id' => 'officer_address', 'class' => 'form-control']) !!}
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="officer_province">{!! Lang::get('forms.province_state') !!}</label>
-                                    {!! Form::select('officer_province[]', array(
+                                    <label for="officer_province_{!! $officer->id !!}">{!! Lang::get('forms.province_state') !!}</label>
+                                    {!! Form::select('officer_province_' . $officer->id, array(
                                                             "AB" => "Alberta",
                                                             "BC" => "British Columbia",
                                                             "MB" => "Manitoba",
@@ -558,13 +563,104 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="officer_zip">{!! Lang::get('forms.zip') !!}</label>
-                                    {!! Form::text('officer_zip[]', $officer->officer_zip, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
+                                    <label for="officer_zip_{!! $officer->id !!}">{!! Lang::get('forms.zip') !!}</label>
+                                    {!! Form::text('officer_zip_' . $officer->id, $officer->officer_zip, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
                                 </div>
 
                                 <hr>
                             @endforeach
 
+                                <h2>Add an Officer</h2>
+                                <div class="form-group">
+                                    <label for="officer_name_0">{!! Lang::get('forms.name') !!}</label>
+                                    {!! Form::text('officer_name_0', null, ['id' => 'officer_name', 'class' => 'form-control']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="officer_title_0">  {!! Lang::get('forms.title') !!}</label>
+                                    {!! Form::text('officer_title_0', null, ['id' => 'officer_title', 'class' => 'form-control']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="officer_address_0">{!! Lang::get('forms.address_of_residence') !!}</label>
+                                    {!! Form::text('officer_address_0', null, ['id' => 'officer_address', 'class' => 'form-control']) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="officer_province_0">{!! Lang::get('forms.province_state') !!}</label>
+                                    {!! Form::select('officer_province_0', array(
+                                                            "AB" => "Alberta",
+                                                            "BC" => "British Columbia",
+                                                            "MB" => "Manitoba",
+                                                            "NB" => "New Brunswick",
+                                                            "NL" => "Newfoundland and Labrador",
+                                                            "NS" => "Nova Scotia",
+                                                            "NT" => "Northwest Territories",
+                                                            "NU" => "Nunavut",
+                                                            "ON" => "Ontario",
+                                                            "PE" => "Prince Edward Island",
+                                                            "QC" => "Quebec",
+                                                            "SK" => "Saskatchewan",
+                                                            "YT" => "Yukon",
+                                                            "AL" => "Alabama",
+                                                            "AK" => "Alaska",
+                                                            "AZ" => "Arizona",
+                                                            "AR" => "Arkansas",
+                                                            "CA" => "California",
+                                                            "CO" => "Colorado",
+                                                            "CT" => "Connecticut",
+                                                            "DE" => "Delaware",
+                                                            "DC" => "District Of Columbia",
+                                                            "FL" => "Florida",
+                                                            "GA" => "Georgia",
+                                                            "HI" => "Hawaii",
+                                                            "ID" => "Idaho",
+                                                            "IL" => "Illinois",
+                                                            "IN" => "Indiana",
+                                                            "IA" => "Iowa",
+                                                            "KS" => "Kansas",
+                                                            "KY" => "Kentucky",
+                                                            "LA" => "Louisiana",
+                                                            "ME" => "Maine",
+                                                            "MD" => "Maryland",
+                                                            "MA" => "Massachusetts",
+                                                            "MI" => "Michigan",
+                                                            "MN" => "Minnesota",
+                                                            "MS" => "Mississippi",
+                                                            "MO" => "Missouri",
+                                                            "MT" => "Montana",
+                                                            "NE" => "Nebraska",
+                                                            "NV" => "Nevada",
+                                                            "NH" => "New Hampshire",
+                                                            "NJ" => "New Jersey",
+                                                            "NM" => "New Mexico",
+                                                            "NY" => "New York",
+                                                            "NC" => "North Carolina",
+                                                            "ND" => "North Dakota",
+                                                            "OH" => "Ohio",
+                                                            "OK" => "Oklahoma",
+                                                            "OR" => "Oregon",
+                                                            "PA" => "Pennsylvania",
+                                                            "RI" => "Rhode Island",
+                                                            "SC" => "South Carolina",
+                                                            "SD" => "South Dakota",
+                                                            "TN" => "Tennessee",
+                                                            "TX" => "Texas",
+                                                            "UT" => "Utah",
+                                                            "VT" => "Vermont",
+                                                            "VA" => "Virginia",
+                                                            "WA" => "Washington",
+                                                            "WV" => "West Virginia",
+                                                            "WI" => "Wisconsin",
+                                                            "WY" => "Wyoming"),
+                                                            null,
+                                                            array('class' => 'form-control')) !!}
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="officer_zip_0">{!! Lang::get('forms.zip') !!}</label>
+                                    {!! Form::text('officer_zip_0', null, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
+                                </div>
                             <hr>
                             <div class="form-group">
                                 <div class="controls">
