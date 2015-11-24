@@ -68,14 +68,21 @@ class AdminTireController extends Controller {
      */
     public function postRegistration()
     {
+        $id = 0;
         if (Input::get('id') > 0) {
             $registration = TireRegistration::find(Input::get('id'));
             $registration->fill(Input::all());
             $registration->save();
+            $id = Input::get('id');
+        } else {
+            $registration = new TireRegistration();
+            $registration->fill(Input::all());
+            $registration->save();
+            $id = $registration->id;
         }
 
         if (Input::get('action') == 1) {
-            return Redirect::to('/admin/registrations/tire-registration?id=' . Input::get('id'));
+            return Redirect::to('/admin/registrations/tire-registration?id=' . $id);
         } else {
             return Redirect::to('/admin/registrations/all-tire-registrations');
         }

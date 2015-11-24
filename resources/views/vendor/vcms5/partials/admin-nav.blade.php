@@ -68,7 +68,7 @@
                         <li><a href="/admin/registrations/all-brand-registrations">All brand registrations</a></li>
                         <li><a href="/admin/registrations/registration?id=0">Add brand registration</a></li>
                         <li><a href="/admin/registrations/all-tire-registrations">All tire registrations</a></li>
-                        <li><a href="/admin/registrations/add-tire-registration?id=0">Add tire registration</a></li>
+                        <li><a href="/admin/registrations/tire-registration?id=0">Add tire registration</a></li>
                     </ul>
                 </li>
             @endif
