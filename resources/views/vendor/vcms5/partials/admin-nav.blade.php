@@ -41,20 +41,20 @@
                     <span class="fa arrow"></span></a>
             </li>
 
-            @if (Auth::user()->hasRole('pages'))
-                @if (Request::segment(2) == 'page')
-                    <li class='active'>
-                @else
-                    <li>
-                @endif
-                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Site Pages</span><span
-                                class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li><a href="/admin/page/all-pages">All Pages</a></li>
-                        <li><a href="/admin/page/page?id=0">Add Page</a></li>
-                    </ul>
-                </li>
-            @endif
+            {{--@if (Auth::user()->hasRole('pages'))--}}
+                {{--@if (Request::segment(2) == 'page')--}}
+                    {{--<li class='active'>--}}
+                {{--@else--}}
+                    {{--<li>--}}
+                {{--@endif--}}
+                    {{--<a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Site Pages</span><span--}}
+                                {{--class="fa arrow"></span></a>--}}
+                    {{--<ul class="nav nav-second-level">--}}
+                        {{--<li><a href="/admin/page/all-pages">All Pages</a></li>--}}
+                        {{--<li><a href="/admin/page/page?id=0">Add Page</a></li>--}}
+                    {{--</ul>--}}
+                {{--</li>--}}
+            {{--@endif--}}
 
             @if (Auth::user()->hasRole('pages'))
                 @if (Request::segment(2) == 'registrations')
