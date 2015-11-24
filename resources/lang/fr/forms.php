@@ -3,7 +3,7 @@
 return [
     'form_title'                => 'Demande D’immatriculation de propriétaire de la marque',
     'oil_program'               => 'Oil and Glycol Program',
-    'name_of_applicant'         => 'Nom du demandeur :',
+    'name_of_applicant'         => 'Nom du demandeur (Legal Business Name):',
     'register_for'              => 'Immatriculation demandée :',
     'paint'                     => 'Peinture',
     'oil'                       => 'D’huile',

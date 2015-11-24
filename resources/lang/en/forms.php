@@ -3,7 +3,7 @@
 return [
     'form_title'                => 'Brand Owner Registration Form',
     'oil_program'               => 'Oil and Glycol Program',
-    'name_of_applicant'         => 'Name of Applicant:',
+    'name_of_applicant'         => 'Name of Applicant (Legal Business Name):',
     'register_for'              => 'Register For:',
     'paint'                     => 'Paint',
     'oil'                       => 'Oil',
