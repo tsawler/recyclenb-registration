@@ -114,6 +114,13 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::post('/admin/registrations/registration', '\App\Http\Controllers\AdminOilController@postRegistration');
             Route::get('/admin/registrations/delete-brand-registration-officer', '\App\Http\Controllers\AdminOilController@deleteOfficer');
             Route::post('/admin/registrations/brand-officers', '\App\Http\Controllers\AdminOilController@updateOfficers');
+
+            //tire registrations
+            Route::get('/admin/registrations/all-tire-registrations', '\App\Http\Controllers\AdminTireController@allRegistrations');
+            Route::get('/admin/registrations/tire-registration', '\App\Http\Controllers\AdminTireController@getRegistration');
+            Route::post('/admin/registrations/tire-registration', '\App\Http\Controllers\AdminTireController@postRegistration');
+            Route::get('/admin/registrations/delete-tire-registration-officer', '\App\Http\Controllers\AdminTireController@deleteOfficer');
+            Route::post('/admin/registrations/tire-officers', '\App\Http\Controllers\AdminTireController@updateOfficers');
         });
 
         Route:: group(array('middleware' => 'auth.events'), function () // make sure admin
