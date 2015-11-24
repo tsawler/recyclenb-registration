@@ -63,7 +63,12 @@
 
                             <div class="form-group">
                                 <label>Registration Type</label><br>
-                                {!! $registration->brandType->brand_name !!}
+
+                                {!! Form::select('type', array(
+                                    '1' => 'Oil and Glycol Program',
+                                    '2' => 'Paint',
+                                    '3' => 'Electronics',
+                                ), null, ['class' => 'form-control']) !!}
                             </div>
 
                             <h2>{!! Lang::get('forms.address_head_office') !!}</h2>
