@@ -20,7 +20,7 @@
                             </strong>
                         </span>
                         <span class="text-muted text-xs block text-center">
-                            Account <b class="caret"></b>
+                            {!! Lang::get('vcms.account') !!} <b class="caret"></b>
                         </span>
                     </span>
                     </a>
