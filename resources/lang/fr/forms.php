@@ -28,7 +28,7 @@ return [
     'email_address'             => 'Courriel',
     'telephone'                 => 'Téléphone',
     'agent_blurb'               => 'Nom, nom de l’entreprise, adresse et numéro de téléphone de tout AGENT agissant pour le compte du demandeur',
-    'company_name'              => 'Nom de la compagnie',
+    'company_name'              => 'Nom de la enterprise',
     'register'                  => 'Envoyer la demande',
     'tire_program'              => 'Demande d’immatriculation de Propriétaire de pneus',
     'does_your_company'         => 'Immatriculation demandée',
@@ -57,6 +57,6 @@ return [
     'lang'                      => 'en',
     'same_address'              => 'Même adresse que ci-dessus',
     'add_an_officer'            => 'Ajouter un dirigeant',
-    'delete_this_officer'       => 'Supprimer cet administrateur',
+    'delete_this_officer'       => 'Dirigeant Supprimer ce dirigeant',
 
 ];
