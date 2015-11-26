@@ -2,7 +2,7 @@
 
 return [
     'welcome_title'             => 'Recycle NB Online Registration',
-    'weclome_blurb'             => 'Welcome to Recycle NB’s online registration. Select the program for which you are registering:',
+    'welcome_blurb'             => 'Welcome to Recycle NB’s online registration. Select the program for which you are registering:',
     'form_title'                => 'Brand Owner Registration Form',
     'name_of_applicant'         => 'Name of Applicant (Legal Business Name):',
     'register_for'              => 'Register For:',
