@@ -54,12 +54,12 @@
                         <ul class="nav navbar-top-links navbar-right">
                             <li>
                                 <span class="m-r-sm text-muted welcome-message">
-                                    Welcome to vCMS Administration
+                                    {!! Lang::get('vcms.welcome_to_vcms') !!}
                                 </span>
                             </li>
                             <li>
                                 <a href="/admin/logout">
-                                    <i class="fa fa-sign-out"></i> Log out
+                                    <i class="fa fa-sign-out"></i> {!! Lang::get('vcms.logout') !!}
                                 </a>
                             </li>
                         </ul>

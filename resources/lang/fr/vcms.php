@@ -1,6 +1,6 @@
 <?php
 return [
-    'welcome to vcms'         => 'Bienvenue à vCMS Administration',
+    'welcome_to_vcms'         => 'Bienvenue à vCMS Administration',
     'logout'                  => 'Déconnexion',
     'all_users'               => 'Tous les utilisateurs',
     'account'                 => 'Compte',
