@@ -12,4 +12,5 @@ return [
     'add_tire_registration'   => 'Ajouter l’immatriculation d’une marque de pneus',
     'users'                   => 'Utilisateurs',
     'public_site'             => 'Site public',
+    'copyright'               => 'Tous droits réservés',
 ];

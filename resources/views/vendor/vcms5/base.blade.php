@@ -86,7 +86,7 @@
                         </div>
                         <div class="footer fixed">
                             <div class="pull-right">
-                                <strong>Copyright</strong> &copy; <?= date('Y') ?> Verilion Inc.
+                                <strong>{!! Lang::get('vcms.copyright') !!}</strong> &copy; <?= date('Y') ?> Verilion Inc.
                             </div>
                         </div>
                     </div>

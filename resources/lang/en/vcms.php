@@ -12,4 +12,5 @@ return [
     'add_tire_registration'   => 'Add Tire Registration',
     'users'                   => 'Users',
     'public_site'             => 'Public Site',
+    'copyright'               => 'Copyright',
 ];
