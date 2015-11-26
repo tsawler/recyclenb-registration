@@ -406,7 +406,7 @@
 </div>
 
 <div class="form-group">
-    <label>{!! Lang::get('type_of_operation') !!}</label>
+    <label>{!! Lang::get('forms.type_of_operation') !!}</label>
     <div class="checkbox">
         <label>
             {!! Form::radio('type_of_company', 'Tire Retailer') !!} {!! Lang::get('forms.tire_retailer') !!}

@@ -30,7 +30,7 @@ return [
     'company_name'              => 'Nom de la compagnie',
     'register'                  => 'Envoyer la demande',
     'tire_program'              => 'Demande d’immatriculation de Propriétaire de pneus',
-    'does_your_company'         => 'Does your company sell tires?',
+    'does_your_company'         => 'Immatriculation demandée',
     'yes_we_sell'               => 'Oui, nous vendons des Pneus',
     'no_we_do_not'              => 'Non, nous vendons pas de Pneus',
     'if_your_company_sells'     => 'Si votre entreprise vend des pneus, s\'il vous plaît fournir votre méthode de remise',
