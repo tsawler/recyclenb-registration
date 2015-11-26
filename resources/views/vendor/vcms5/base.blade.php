@@ -53,6 +53,24 @@
                     </div>
                         <ul class="nav navbar-top-links navbar-right">
                             <li>
+                                <a href="/changelanguage?lang=en&amp;url={!! URL::current() !!}" style="color: black;">
+                                    @if (Session::get('lang') == 'en')
+                                        <span class="text-danger">EN</span>
+                                    @else
+                                        EN
+                                    @endif
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/changelanguage?lang=fr&amp;url={!! URL::current() !!}" style="color: black;">
+                                    @if (Session::get('lang') == 'fr')
+                                        <span class="text-danger">FR</span>
+                                    @else
+                                        FR
+                                    @endif
+                                </a>
+                            </li>
+                            <li>
                                 <span class="m-r-sm text-muted welcome-message">
                                     {!! Lang::get('vcms.welcome_to_vcms') !!}
                                 </span>
