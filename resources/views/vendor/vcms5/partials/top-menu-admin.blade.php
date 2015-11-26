@@ -10,7 +10,7 @@
                 </div>
                 <div class="pull-right">
                     <a href='/admin/logout' style='color: white'>
-                        <i class="fa fa-close"></i> Logout</a> &nbsp;&nbsp;
+                        <i class="fa fa-close"></i> {!! Lang::get('vcms.logout') !!}</a> &nbsp;&nbsp;
                 </div>
 
             </div>
