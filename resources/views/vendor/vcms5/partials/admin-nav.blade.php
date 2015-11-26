@@ -62,7 +62,7 @@
                 @else
                     <li>
                     @endif
-                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Registrations</span><span
+                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">{!! Lang::get('vcms.registrations') !!}</span><span
                                 class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="/admin/registrations/all-brand-registrations">All brand registrations</a></li>
