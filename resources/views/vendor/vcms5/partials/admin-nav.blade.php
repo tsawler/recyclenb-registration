@@ -65,10 +65,10 @@
                     <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">{!! Lang::get('vcms.registrations') !!}</span><span
                                 class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/registrations/all-brand-registrations">All brand registrations</a></li>
-                        <li><a href="/admin/registrations/registration?id=0">Add brand registration</a></li>
-                        <li><a href="/admin/registrations/all-tire-registrations">All tire registrations</a></li>
-                        <li><a href="/admin/registrations/tire-registration?id=0">Add tire registration</a></li>
+                        <li><a href="/admin/registrations/all-brand-registrations">{!! Lang::get('vcms.all_brand_registrations') !!}</a></li>
+                        <li><a href="/admin/registrations/registration?id=0">{!! Lang::get('vcms.add_brand_registration') !!}</a></li>
+                        <li><a href="/admin/registrations/all-tire-registrations">{!! Lang::get('vcms.all_tire_registrations') !!}</a></li>
+                        <li><a href="/admin/registrations/tire-registration?id=0">{!! Lang::get('vcms.add_tire_registration') !!}</a></li>
                     </ul>
                 </li>
             @endif
@@ -155,7 +155,7 @@
                     <li>
                 @endif
                     <a href="#"><i class="fa fa-users"></i> <span
-                                class="nav-label">Users</span><span class="fa arrow"></span></a>
+                                class="nav-label">{!! Lang::get('vcms.users') !!}</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="/admin/users/all-users">All Users</a></li>
                         <li><a href="/admin/users/user?id=0">Add User</a></li>
@@ -164,7 +164,7 @@
             @endif
 
             <li>
-                <a href="/"><i class="fa fa-external-link"></i> <span class="nav-label">Public Site</span>
+                <a href="/"><i class="fa fa-external-link"></i> <span class="nav-label">{!! Lang::get('vcms.public_site') !!}</span>
                     <span class="fa arrow"></span></a>
             </li>
 
