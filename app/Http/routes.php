@@ -25,29 +25,23 @@ Route::post('/', function() {
     switch ($type) {
 
         case 1 :
-            $title = "Oil and Glycol Program";
-            $title_fr = "Oil and Glycol Program";
+            $title = \Illuminate\Support\Facades\Lang::get('forms.oil_program');
             return View::make('oil')
                 ->with('title', $title)
-                ->with('title_fr', $title_fr)
                 ->with('type', $type);
             break;
 
         case 2 :
-            $title = "Paint Program";
-            $title_fr = "Paint Program";
+            $title = \Illuminate\Support\Facades\Lang::get('forms.paint');
             return View::make('oil')
                 ->with('title', $title)
-                ->with('title_fr', $title_fr)
                 ->with('type', $type);
             break;
 
         case 3 :
-            $title = "Electronics Program";
-            $title_fr = "Electroics Program";
+            $title = \Illuminate\Support\Facades\Lang::get('forms.electronics');
             return View::make('oil')
             ->with('title', $title)
-            ->with('title_fr', $title_fr)
             ->with('type', $type);
             break;
 

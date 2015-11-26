@@ -1,12 +1,15 @@
 <?php
 
 return [
+    'welcome_title'             => 'Recycle NB Online Registration',
+    'weclome_blurb'             => 'Welcome to Recycle NB’s online registration. Select the program for which you are registering:',
     'form_title'                => 'Brand Owner Registration Form',
-    'oil_program'               => 'Oil and Glycol Program',
     'name_of_applicant'         => 'Name of Applicant (Legal Business Name):',
     'register_for'              => 'Register For:',
+    'oil_program'               => 'Oil and Glycol Program',
     'paint'                     => 'Paint',
     'oil'                       => 'Oil',
+    'tires'                     => 'Tires,',
     'antifreeze'                => 'Antifreeze/Glycol',
     'electronics'               => 'Electronics',
     'address_head_office'       => 'Address and Location of Head Office of the Applicant:',
@@ -49,8 +52,10 @@ return [
     'signature_blurb'           => 'Please type your full name, which acts as your electronic signature',
     'confirmation_title'        => 'Confirmation',
     'confirmation_blurb'        => 'Thank you. This is confirmation of  your registration with Recycle NB.',
-    'language_choice'           => 'Francais',
+    'language_choice'           => 'Français',
     'lang'                      => 'fr',
     'same_address'              => 'Same address as above',
+    'add_an_officer'            => 'Add an Officer',
+    'delete_this_officer'       => 'Delete this officer',
 
 ];

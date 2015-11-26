@@ -19,7 +19,9 @@
 
 @section('bottom-js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
-
+    @if ((Session::has('lang')) && (Session::get('lang') == 'fr'))
+        <script type="text/javascript" src="/jquery-validation-fr.js"></script>
+    @endif
     <script>
         $(document).ready(function () {
             $("#bookform").validate({

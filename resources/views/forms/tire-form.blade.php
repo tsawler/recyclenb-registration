@@ -202,7 +202,7 @@
 <h3>{!! Lang::get('forms.corp_blurb') !!}</h3>
 
 <div id="corp" class="top-div">
-    <h4>{!! Lang::get('forms.officer') !!} <a href="#!" class="text-danger hidden remove remove-button">Delete this officer</a></h4>
+    <h4>{!! Lang::get('forms.officer') !!} <a href="#!" class="text-danger hidden remove remove-button">{!! Lang::get('forms.delete_this_officer') !!}</a></h4>
     <div class="form-group">
         <label for="officer_name">{!! Lang::get('forms.name') !!}</label>
         {!! Form::text('officer_name[]', null, ['id' => 'officer_name', 'class' => 'form-control']) !!}
@@ -294,7 +294,7 @@
         {!! Form::text('officer_zip[]', null, ['id' => 'officer_zip', 'class' => 'form-control']) !!}
     </div>
 </div>
-<a class="btn btn-primary" onclick="addOfficer()">Add an Officer</a>
+<a class="btn btn-primary" onclick="addOfficer()">{!! Lang::get('forms.add_an_officer') !!}</a>
 
 
 
