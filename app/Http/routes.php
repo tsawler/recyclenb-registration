@@ -25,7 +25,7 @@ Route::post('/', function() {
     switch ($type) {
 
         case 1 :
-            $title = \Illuminate\Support\Facades\Lang::get('forms.oil_program');
+            $title = \Illuminate\Support\Facades\Lang::get('forms.oil_program_title');
             return View::make('oil')
                 ->with('title', $title)
                 ->with('type', $type);
