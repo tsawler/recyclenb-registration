@@ -28,7 +28,7 @@ return [
     'email_address'             => 'Courriel',
     'telephone'                 => 'Téléphone',
     'agent_blurb'               => 'Nom, nom de l’entreprise, adresse et numéro de téléphone de tout AGENT agissant pour le compte du demandeur',
-    'company_name'              => 'Nom de l’enterprise',
+    'company_name'              => 'Nom de l’entreprise',
     'register'                  => 'Envoyer la demande',
     'tire_program'              => 'Demande d’immatriculation au programme de pneus',
     'does_your_company'         => 'Immatriculation demandée',
