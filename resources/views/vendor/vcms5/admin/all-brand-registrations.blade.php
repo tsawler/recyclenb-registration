@@ -1,7 +1,7 @@
 @extends('vcms5::base')
 
 @section('top-white')
-<h1>Brand Registrations</h1>
+<h1>{!! Lang::get('vcms.brand_registrations') !!}</h1>
 @stop
 
 @section('content-title')
@@ -12,7 +12,7 @@
 <div class="col-lg-12">
     <div class="ibox float-e-margins">
         <div class="ibox-title">
-            <h5>Brand Registrations</h5>
+            <h5>{!! Lang::get('vcms.brand_registrations') !!}</h5>
             <div class="ibox-tools">
                 <a class="collapse-link">
                     <i class="fa fa-chevron-up"></i>

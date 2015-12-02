@@ -13,4 +13,12 @@ return [
     'users'                   => 'Utilisateurs',
     'public_site'             => 'Site public',
     'copyright'               => 'Tous droits réservés',
+    'all_users'               => 'Tous les utilisateurs',
+    'add_user'                => 'Ajouter un utilisateur',
+    'brand_registrations'     => 'Immatriculation – toutes les marques',
+    'brand_registration'      => 'Immatriculation d’une marque',
+    'tire_registrations'      => 'Immatriculation – toutes les marques de pneus',
+    'tire_registration'       => 'Immatriculation d’une marque de pneus',
+
+
 ];

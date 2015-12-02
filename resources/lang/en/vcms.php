@@ -13,4 +13,8 @@ return [
     'users'                   => 'Users',
     'public_site'             => 'Public Site',
     'copyright'               => 'Copyright',
+    'brand_registrations'     => 'Brand Registrations',
+    'brand_registration'      => 'Brand Registration',
+    'tire_registrations'      => 'Tire Registrations',
+    'tire_registration'       => 'Tire Registration',
 ];

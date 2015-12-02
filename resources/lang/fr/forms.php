@@ -19,7 +19,7 @@ return [
     'province_state'            => 'Province/État',
     'zip'                       => 'Code postal',
     'nb_location_blurb'         => 'Adresse et emplacement de l’établissement principal au Nouveau-Brunswick',
-    'corp_blurb'                => 'S’il s’agit d’une société, veuillez fournir les renseignements suivants concernant <strong>tous</strong> les dirigeants de la société',
+    'corp_blurb'                => 'S’il s’agit d’une société, veuillez fournir les renseignements suivants concernant tous les dirigeants de la société',
     'name'                      => 'Nom',
     'title'                     => 'Titre',
     'address_of_residence'      => 'Adresse de l’entreprise',
