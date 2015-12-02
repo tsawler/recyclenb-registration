@@ -402,7 +402,7 @@
         </label>
     </div>
 
-    <label><sup>*</sup>{!! Lang::get('forms.must_supply') !!}</label>
+
 </div>
 
 <div class="form-group">
