@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="name_of_applicant">{!! Lang::get('forms.name_of_applicant') !!}</label>
-    {!! Form::text('name_of_applicant', null, ['id' => 'name_of_applicant', 'class' => 'form-control']) !!}
+    {!! Form::text('name_of_applicant', null, ['id' => 'name_of_applicant', 'class' => 'form-control required']) !!}
 </div>
 
 <h3>{!! Lang::get('forms.address_head_office') !!}</h3>
