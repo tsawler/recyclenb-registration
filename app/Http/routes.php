@@ -14,6 +14,11 @@
 Route::get('/changelanguage', 'LanguageController@getChangeLanguage');
 
 Route::get('/', function(){
+
+    if (Input::has('lang')){
+        Session::put('lang', Input::get('lang'));
+        App::setLocale(Input::get('lang'));
+    }
     return view('index');
 });
 

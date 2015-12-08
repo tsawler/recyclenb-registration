@@ -148,6 +148,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Tsawler\Vcms5\Vcms5ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
