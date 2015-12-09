@@ -18,6 +18,9 @@ Route::get('/', function(){
     if (Input::has('lang')){
         Session::put('lang', Input::get('lang'));
         App::setLocale(Input::get('lang'));
+    } else {
+        Session::put('lang', 'en');
+        App::setLocale('en');
     }
     return view('index');
 });
