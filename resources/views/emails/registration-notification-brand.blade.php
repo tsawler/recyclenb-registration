@@ -3,5 +3,5 @@
 </p>
 <ul>
     <li>Company: {!! $company !!}</li>
-    <li>Brand: Tires</li>
+    <li>Brand: {!! $brand !!}</li>
 </ul>

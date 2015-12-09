@@ -37,8 +37,12 @@ class TireController extends Controller {
             }
         }
 
+        $data = array(
+            'company'       => Input::get('name_of_applicant')
+        );
+
         // send mail
-        Mail::send('emails.registration-notification', [], function ($m) {
+        Mail::send('emails.registration-notification', $data, function ($m) {
             $m->from('donotreply@recyclenb.com', 'REgistration');
             $m->to('info@recyclenb.com')->subject('Online registration form completed');
         });

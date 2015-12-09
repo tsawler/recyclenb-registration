@@ -38,9 +38,16 @@ class OilController extends Controller {
             }
         }
 
+        $industry = ['','Oil and Glycol','Paint','Electronics'];
+
+        $data = array(
+            'company'       => Input::get('name_of_applicant'),
+            'brand'  => $industry[Input::get('type')]
+        );
+
         // send mail
-        Mail::send('emails.registration-notification', [], function ($m) {
-            $m->from('donotreply@recyclenb.com', 'REgistration');
+        Mail::send('emails.registration-notification-brand', $data, function ($m) {
+            $m->from('donotreply@recyclenb.com', 'Registration');
             $m->to('info@recyclenb.com')->subject('Online registration form completed');
         });
 
