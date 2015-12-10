@@ -24,6 +24,7 @@
                 <table id="itable" class="table table-compact table-striped table-hover">
                     <thead>
                     <tr>
+                        <th>Reg #</th>
                         <th>Registration</th>
                         <th>Created</th>
                         <th>Updated</th>
@@ -32,6 +33,7 @@
                     <tbody>
                     @foreach ($allregistrations as $registration)
                         <tr>
+                            <td><a href="/admin/registrations/tire-registration?id={!! $registration->id!!}">{!! $registration->id !!}</a></td>
                             <td><a href="/admin/registrations/tire-registration?id={!! $registration->id!!}">{!! $registration->name_of_applicant !!}</a></td>
                             <td>{!! $registration->created_at !!}</td>
                             <td>{!! $registration->updated_at !!}</td>
