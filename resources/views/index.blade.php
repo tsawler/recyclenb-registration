@@ -8,7 +8,7 @@
     <div class="col-md-8">
         <div class="row">
             <div class="col-md-12"></div>
-            <a class="pull-right" href="/changelanguage?lang={!! Lang::get('forms.lang') !!}&url=/">{!! Lang::get('forms.language_choice') !!}</a>
+            <a class="pull-right" href="/?lang={!! Lang::get('forms.lang') !!}&url=/">{!! Lang::get('forms.language_choice') !!}</a>
         </div>
 
         <h1>{!! Lang::get('forms.welcome_title') !!}</h1>
