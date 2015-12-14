@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
@@ -20,6 +21,7 @@ class LanguageController extends Controller {
      */
     public function getChangeLanguage()
     {
+        Log::info('lang is ' . Input::get('lang'));
         Session::put('lang', Input::get('lang'));
         App::setLocale(Input::get('lang'));
 
