@@ -19,6 +19,7 @@ class TireRegistration extends Model {
         'remittance',
         'type_of_company',
         'head_physical_location',
+        'head_province_state',
         'head_mailing_address',
         'head_zip',
         'nb_physical_location',

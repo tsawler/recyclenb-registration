@@ -18,6 +18,7 @@ class BrandRegistration extends Model {
         'type',
         'head_physical_location',
         'head_mailing_address',
+        'head_province_state',
         'head_zip',
         'nb_physical_location',
         'nb_mailing_address',
