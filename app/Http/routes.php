@@ -124,6 +124,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::post('/admin/registrations/tire-registration', '\App\Http\Controllers\AdminTireController@postRegistration');
             Route::get('/admin/registrations/delete-tire-registration-officer', '\App\Http\Controllers\AdminTireController@deleteOfficer');
             Route::post('/admin/registrations/tire-officers', '\App\Http\Controllers\AdminTireController@updateOfficers');
+            Route::get('/admin/registrations/print-tire-registration', '\App\Http\Controllers\AdminTireController@printPDF');
         });
 
         Route:: group(array('middleware' => 'auth.events'), function () // make sure admin

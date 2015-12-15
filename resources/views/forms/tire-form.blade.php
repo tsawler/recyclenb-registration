@@ -390,14 +390,14 @@
     <label>{!! Lang::get('forms.if_your_company_sells') !!}</label><br>
     <div class="checkbox">
         <label>
-            {!! Form::radio('remittance', 'Remit to RNB') !!} {!! Lang::get('forms.remit_to_rnb') !!}
+            {!! Form::radio('remittance', '1') !!} {!! Lang::get('forms.remit_to_rnb') !!}
         </label><br>
         <label>
-            {!! Form::radio('remittance', 'Remit Through Head Office') !!} {!! Lang::get('forms.remit_through_head_office') !!}
+            {!! Form::radio('remittance', '2') !!} {!! Lang::get('forms.remit_through_head_office') !!}
             <sup>*</sup>
         </label><br>
         <label>
-            {!! Form::radio('remittance', 'Remit Through Supplier') !!} {!! Lang::get('forms.remit_through_supplier') !!}
+            {!! Form::radio('remittance', '3') !!} {!! Lang::get('forms.remit_through_supplier') !!}
             <sup>*</sup>
         </label>
     </div>
@@ -409,28 +409,28 @@
     <label>{!! Lang::get('forms.type_of_operation') !!}</label>
     <div class="checkbox">
         <label>
-            {!! Form::radio('type_of_company', 'Tire Retailer') !!} {!! Lang::get('forms.tire_retailer') !!}
+            {!! Form::radio('type_of_company', '1') !!} {!! Lang::get('forms.tire_retailer') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Car Dealer') !!} {!! Lang::get('forms.car_dealer') !!}
+            {!! Form::radio('type_of_company', '2') !!} {!! Lang::get('forms.car_dealer') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Solid Waste Commission') !!} {!! Lang::get('forms.solid_waste_commission') !!}
+            {!! Form::radio('type_of_company', '3') !!} {!! Lang::get('forms.solid_waste_commission') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Garage') !!} {!! Lang::get('forms.garage') !!}
+            {!! Form::radio('type_of_company', '4') !!} {!! Lang::get('forms.garage') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Trucking Company') !!} {!! Lang::get('forms.trucking_company') !!}
+            {!! Form::radio('type_of_company', '5') !!} {!! Lang::get('forms.trucking_company') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Towing Company') !!} {!! Lang::get('forms.towing_company') !!}
+            {!! Form::radio('type_of_company', '6') !!} {!! Lang::get('forms.towing_company') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Salvage Yard') !!} {!! Lang::get('forms.salvage_yard') !!}
+            {!! Form::radio('type_of_company', '7') !!} {!! Lang::get('forms.salvage_yard') !!}
         </label><br>
         <label>
-            {!! Form::radio('type_of_company', 'Other') !!} {!! Lang::get('forms.other') !!}
+            {!! Form::radio('type_of_company', '8') !!} {!! Lang::get('forms.other') !!}
 
         </label>
     </div>
