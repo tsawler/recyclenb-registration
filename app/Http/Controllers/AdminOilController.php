@@ -6,6 +6,9 @@ use App\BrandRegistrationOfficer;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use App\ElectronicsNumber;
+use App\OilNumber;
+use App\PaintNumber;
 
 /**
  * Class AdminOilController
@@ -77,6 +80,34 @@ class AdminOilController extends Controller {
             $registration->fill(Input::all());
             $registration->save();
             $id = $registration->id;
+
+            // save and get reg number
+            switch (Input::get('type')) {
+
+                case 1:
+                    // oil
+                    $OilNumber = new OilNumber();
+                    $OilNumber->brand_registration_id = $registration_id;
+                    $OilNumber->save();
+                    break;
+
+                case 2:
+                    // paint
+                    $PaintNumber = new PaintNumber();
+                    $PaintNumber->brand_registration_id = $registration_id;
+                    $PaintNumber->save();
+                    break;
+
+                case 3:
+                    // electronics
+                    $ElectronicsNumber = new ElectronicsNumber();
+                    $ElectronicsNumber->brand_registration_id = $registration_id;
+                    $ElectronicsNumber->save();
+                    break;
+
+                default:
+                    // do nothing
+            }
         }
 
         if (Input::get('action') == 1) {
