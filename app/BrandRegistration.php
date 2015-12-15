@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class BrandRegistration
  * @package App
  */
-class BrandRegistration extends Model
-{
+class BrandRegistration extends Model {
 
     /**
      * @var array
@@ -58,6 +57,32 @@ class BrandRegistration extends Model
     public function brandType()
     {
         return $this->hasOne('App\BrandType', 'id', 'type');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function OilNumber()
+    {
+        return $this->hasOne('App\OilNumber');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function PaintNumber()
+    {
+        return $this->hasOne('App\PaintNumber');
+    }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function ElectronicsNumber()
+    {
+        return $this->hasOne('App\ElectronicsNumber');
     }
 
 }

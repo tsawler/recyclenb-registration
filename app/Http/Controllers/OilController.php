@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 
 use App\BrandRegistration;
 use App\BrandRegistrationOfficer;
+use App\ElectronicsNumber;
+use App\OilNumber;
+use App\PaintNumber;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Mail;
@@ -17,6 +20,34 @@ class OilController extends Controller {
         $registration->ip_address = Request::getClientIp();
         $registration->save();
         $registration_id = $registration->id;
+
+        // save and get reg number
+        switch (Input::get('type')) {
+
+            case 1:
+                // oil
+                $OilNumber = new OilNumber();
+                $OilNumber->brand_registration_id = $registration_id;
+                $OilNumber->save();
+                break;
+
+            case 2:
+                // paint
+                $PaintNumber = new PaintNumber();
+                $PaintNumber->brand_registration_id = $registration_id;
+                $PaintNumber->save();
+                break;
+
+            case 3:
+                // electronics
+                $ElectronicsNumber = new ElectronicsNumber();
+                $ElectronicsNumber->brand_registration_id = $registration_id;
+                $ElectronicsNumber->save();
+                break;
+
+            default:
+                // do nothing
+        }
 
         $officer_names = Input::get('officer_name');
         $officer_titles = Input::get("officer_title");
