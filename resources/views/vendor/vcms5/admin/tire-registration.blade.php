@@ -1,7 +1,7 @@
 @extends('vcms5::base')
 
 @section('top-white')
-    <h1>{!! Lang::get('vcms.trand_registration') !!}: {!! $registration->name_of_applicant !!}</h1>
+    <h1>{!! Lang::get('vcms.brand_registration') !!}: {!! $registration->name_of_applicant !!}</h1>
 @stop
 
 @section('content-title')
