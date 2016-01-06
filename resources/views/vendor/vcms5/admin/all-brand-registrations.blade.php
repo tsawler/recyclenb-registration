@@ -40,7 +40,7 @@
                             {!! $registration->OilNumber->id or '' !!}
                         @elseif ($registration->type == 2)
                             {!! $registration->PaintNumber->id or '' !!}
-                        @elseif ($registration_type == 3)
+                        @elseif ($registration->type == 3)
                             {!! $registration->ElectronicsNumber->id or '' !!}
                         @endif
                     </td>
