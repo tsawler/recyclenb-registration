@@ -221,7 +221,15 @@
 
     <div class="form-group">
         <label for="officer_title">{!! Lang::get('forms.title') !!}</label>
-        {!! Form::text('officer_title[]', null, ['id' => 'officer_title', 'class' => 'form-control']) !!}
+        {!! Form::select('officer_title[]', [
+            'President' => Lang::get('forms.president'),
+            'Vice President' => Lang::get('forms.vice_president'),
+            'Treasurer' => Lang::get('forms.treasurer'),
+            'Director' => Lang::get('forms.director'),
+        ],
+        null,
+        array('class' => 'form-control')) !!}
+
     </div>
 
     <div class="form-group">

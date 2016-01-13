@@ -60,4 +60,9 @@ return [
     'delete_this_officer'       => 'Delete this officer',
     'no_location'               => 'We do not have a location in New Brunsick',
 
+    'president'                 => 'President',
+    'vice_president'            => 'Vice President',
+    'treasurer'                 => 'Treasurer',
+    'director'                  => 'Director',
+
 ];

@@ -60,4 +60,8 @@ return [
     'delete_this_officer'       => 'Supprimer ce dirigeant',
     'no_location'               => 'Nous ne disposons pas d\'un emplacement au Nouveau-Brunswick',
 
+    'president'                 => 'Président',
+    'vice_president'            => 'Vice président',
+    'treasurer'                 => 'Trésorier',
+    'director'                  => 'Directeur',
 ];
