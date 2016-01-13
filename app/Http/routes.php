@@ -117,6 +117,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::get('/admin/registrations/delete-brand-registration-officer', '\App\Http\Controllers\AdminOilController@deleteOfficer');
             Route::post('/admin/registrations/brand-officers', '\App\Http\Controllers\AdminOilController@updateOfficers');
             Route::get('/admin/registrations/print-registration', '\App\Http\Controllers\AdminOilController@printPDF');
+            Route::post('/admin/savebrandnote', '\App\Http\Controllers\AdminOilController@saveNote');
 
             //tire registrations
             Route::get('/admin/registrations/all-tire-registrations', '\App\Http\Controllers\AdminTireController@allRegistrations');
@@ -125,6 +126,7 @@ Route::group(array('middleware' => 'auth'), function () // make sure authenticat
             Route::get('/admin/registrations/delete-tire-registration-officer', '\App\Http\Controllers\AdminTireController@deleteOfficer');
             Route::post('/admin/registrations/tire-officers', '\App\Http\Controllers\AdminTireController@updateOfficers');
             Route::get('/admin/registrations/print-tire-registration', '\App\Http\Controllers\AdminTireController@printPDF');
+            Route::post('/admin/savetirenote', '\App\Http\Controllers\AdminTireController@saveNote');
         });
 
         Route:: group(array('middleware' => 'auth.events'), function () // make sure admin

@@ -8,6 +8,7 @@ use App\TireRegistrationOfficer;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
+use App\Rnb\History;
 
 /**
  * Class AdminOilController
@@ -80,6 +81,8 @@ class AdminTireController extends Controller {
             $registration->save();
             $id = $registration->id;
         }
+
+        History::enterTireHistory($registration->id, "Form updated with new information");
 
         if (Input::get('action') == 1) {
             return Redirect::to('/admin/registrations/tire-registration?id=' . $id);
@@ -295,6 +298,15 @@ class AdminTireController extends Controller {
 
         $pdf->output('Tire registration ' . $registration->id . '.pdf', 'D');;
 
+    }
+
+
+    public function saveNote()
+    {
+        if (strlen(Input::get('note')) > 0)
+            History::enterTireNotes(Input::get('brand_registration_id'), Input::get('note'));
+
+        return Redirect::to("/admin/registrations/tire-registration?id=" . Input::get('brand_registration_id') . "&tab=notes");
     }
 }
 

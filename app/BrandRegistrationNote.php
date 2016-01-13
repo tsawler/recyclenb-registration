@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BrandRegisrationNote extends Model
+class BrandRegistrationNote extends Model
 {
     //
 }

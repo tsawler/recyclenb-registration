@@ -2,7 +2,10 @@
 namespace App\Http\Controllers;
 
 use App\BrandRegistration;
+use App\BrandRegistrationNote;
 use App\BrandRegistrationOfficer;
+use App\Rnb\History;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
@@ -110,6 +113,8 @@ class AdminOilController extends Controller {
             }
         }
 
+        History::enterBrandHistory($registration->id, "Form updated with new information");
+
         if (Input::get('action') == 1) {
             return Redirect::to('/admin/registrations/registration?id=' . $id);
         } else {
@@ -117,7 +122,6 @@ class AdminOilController extends Controller {
         }
 
     }
-
 
 
     /**
@@ -161,7 +165,7 @@ class AdminOilController extends Controller {
 
     public function printPDF()
     {
-        $industry = ['','Oil and Glycol','Paint','Electronics'];
+        $industry = ['', 'Oil and Glycol', 'Paint', 'Electronics'];
         $id = Input::get('id');
         $reg_no = 0;
 
@@ -169,7 +173,7 @@ class AdminOilController extends Controller {
         $registration = BrandRegistration::find($id);
 
         // get type
-        switch ($registration->type){
+        switch ($registration->type) {
             case 1:
                 $reg_no = $registration->OilNumber->id;
                 break;
@@ -193,23 +197,23 @@ class AdminOilController extends Controller {
         $pdf->setY(45.5);
         $pdf->setX(25);
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registrant Information'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Registrant Information'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
 
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registrant: ' . $registration->name_of_applicant));
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Registrant: ' . $registration->name_of_applicant));
         $pdf->Ln();
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registration Type: ' . $industry[$registration->type]));
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Registration Type: ' . $industry[$registration->type]));
         $pdf->Ln();
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registration Number: ' . $reg_no));
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Registration Number: ' . $reg_no));
         $pdf->Ln();
         $pdf->Ln();
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Address and Location of Head Office'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Address and Location of Head Office'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
 
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Physical Location: ' . $registration->head_physical_location));
         $pdf->Ln();
@@ -221,10 +225,10 @@ class AdminOilController extends Controller {
         $pdf->Ln();
         $pdf->Ln();
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Address and Location of Main Place of Business in NB'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Address and Location of Main Place of Business in NB'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'NB Location: ' . $registration->nb_physical_location));
         $pdf->Ln();
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'NB Mailing Address: ' . $registration->nb_mailing_address));
@@ -235,10 +239,10 @@ class AdminOilController extends Controller {
         $pdf->Ln();
         $pdf->Ln();
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Address and Location of Contact Person'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Address and Location of Contact Person'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
 
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Contact Name: ' . $registration->contact_name));
         $pdf->Ln();
@@ -254,10 +258,10 @@ class AdminOilController extends Controller {
         $pdf->Ln();
         $pdf->Ln();
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Agent acting on Behalf of Applicant'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Agent acting on Behalf of Applicant'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
 
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Agent Name: ' . $registration->agent_name));
         $pdf->Ln();
@@ -297,10 +301,10 @@ class AdminOilController extends Controller {
         }
 
 
-        $pdf->SetFont('Helvetica','B');
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Signature'));
+        $pdf->SetFont('Helvetica', 'B');
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Signature'));
         $pdf->Ln();
-        $pdf->SetFont('Helvetica','');
+        $pdf->SetFont('Helvetica', '');
 
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252', 'Signature: ' . $registration->signature));
         $pdf->Ln();
@@ -309,6 +313,15 @@ class AdminOilController extends Controller {
 
         $pdf->output($industry[$registration->type] . ' registration ' . $reg_no . '.pdf', 'D');;
 
+    }
+
+
+    public function saveNote()
+    {
+        if (strlen(Input::get('note')) > 0)
+            History::enterBrandNotes(Input::get('brand_registration_id'), Input::get('note'));
+
+        return Redirect::to("/admin/registrations/registration?id=" . Input::get('brand_registration_id') . "&tab=notes");
     }
 }
 

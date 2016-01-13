@@ -4,8 +4,10 @@ namespace App\Rnb;
 
 use App\BrandRegisrationNote;
 use App\BrandRegistrationHistory;
+use App\BrandRegistrationNote;
 use App\TireRegistrationHistory;
 use App\TireRegistrationNote;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class History
@@ -50,7 +52,7 @@ class History {
     public static function enterBrandNotes($brand_registration_id, $notes = "")
     {
         // put entry into brand_registration_notes
-        $activity = new BrandRegisrationNote();
+        $activity = new BrandRegistrationNote();
         $activity->brand_registration_id = $brand_registration_id;
         $activity->notes = $notes;
         $activity->user_name = Auth::user()->first_name . " " . Auth::user()->last_name;

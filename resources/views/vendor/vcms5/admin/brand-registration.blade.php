@@ -51,7 +51,7 @@
                                 @if((Input::has('tab')) && (Input::get('tab') == 'history'))
                                 class="active"
                                     @endif
-                            ><a href="#notes" aria-controls="history" role="tab" data-toggle="tab">History</a></li>
+                            ><a href="#history" aria-controls="history" role="tab" data-toggle="tab">History</a></li>
                         @endif
                     </ul>
 
@@ -728,6 +728,29 @@
                                  @endif
                                  id="notes">
 
+                                <button id="add_note" class="btn btn-info pull-right">Add Note</button>
+                                <div class="clearfix"></div>
+
+                                <table class="table table-compact table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Note</th>
+                                            <th>Date</th>
+                                            <th>Added By</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach($registration->notes as $note)
+                                            <tr>
+                                                <td>{!! $note->notes !!}</td>
+                                                <td>{!! $note->created_at !!}</td>
+                                                <td>{!! $note->user_name !!}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
                             </div>
 
                             <div role="tabpanel"
@@ -737,6 +760,26 @@
                                  class="tab-pane"
                                  @endif
                                  id="history">
+
+                                <table class="table table-compact table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Date</th>
+                                        <th>Added By</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    @foreach($registration->history as $history)
+                                        <tr>
+                                            <td>{!! $history->history !!}</td>
+                                            <td>{!! $history->created_at !!}</td>
+                                            <td>{!! $history->user_name !!}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
 
                             </div>
                         @endif
@@ -801,6 +844,34 @@
             } else {
                 $("#nb_loc").removeClass('hidden');
             }
+        });
+
+        $("#add_note").click(function(){
+            bootbox.dialog({
+                        title: "Enter Note.",
+                        message: '<div class="row">' +
+                        '<div class="col-md-12">' +
+                        '<form id="note_form" name="note_form" method="post" action="/admin/savebrandnote">' +
+                        '<?php echo csrf_field(); ?>' +
+                        '<input type="hidden" name="brand_registration_id" value="{!! $registration->id !!}">' +
+                        '<div class="form-group">' +
+                        '<label for="note">Enter Note</label>' +
+                        '<textarea class="form-control" name="note"></textarea>' +
+                        '</form>' +
+                        '</div>' +
+                        '</div>' +
+                    '</div>',
+                        buttons: {
+                            success: {
+                                label: "Save",
+                                className: "btn-success",
+                                callback: function () {
+                                    $("#note_form").submit();
+                                }
+                            }
+                        }
+                    }
+            );
         });
     </script>
 @stop
