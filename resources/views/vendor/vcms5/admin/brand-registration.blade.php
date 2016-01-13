@@ -166,6 +166,22 @@
                                 </label>
                             </div>
 
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" id="no_location"
+                                        @if($registration->nb_physical_location == null)
+                                            checked
+                                        @endif
+                                    >
+                                    {!! Lang::get('forms.no_location') !!}
+                                </label>
+                            </div>
+
+                            <div id="nb_loc"
+                                    @if($registration->nb_physical_location == null)
+                                    class="hidden"
+                                    @endif
+                            >
                             <div class="form-group">
                                 <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
                                 {!! Form::text('nb_physical_location', null, ['id' => 'nb_physical_location', 'class' => 'form-control required']) !!}
@@ -250,6 +266,8 @@
                             <div class="form-group">
                                 <label for="nb_zip">{!! Lang::get('forms.zip') !!}</label>
                                 {!! Form::text('nb_zip', null, ['id' => 'nb_zip', 'class' => 'form-control required']) !!}
+                            </div>
+
                             </div>
 
                             <h2>{!! Lang::get('forms.contact_blurb') !!}</h2>
@@ -456,7 +474,7 @@
                             <h2>{!! Lang::get('forms.signature') !!}</h2>
                             <div class="form-group">
                                 <label for="signature">{!! Lang::get('forms.signature_blurb') !!}</label>
-                                {!! Form::text('signature', null, ['id' => 'signature', 'class' => 'form-control required']) !!}
+                                {!! Form::text('signature', null, ['id' => 'signature', 'readonly' => 'readonly', 'class' => 'form-control required']) !!}
                             </div>
 
                             <hr>
@@ -733,6 +751,19 @@
                 $("#nb_mailing_address").val('');
                 $("#nb_province_state").val('');
                 $("#nb_zip").val('');
+            }
+        });
+
+        $("#no_location").change(function(){
+            if(document.getElementById('no_location').checked) {
+                $("#nb_loc").addClass('hidden');
+                $("#nb_physical_location").val('');
+                $("#nb_mailing_address").val('');
+                $("#nb_province_state").val('');
+                $("#nb_zip").val('');
+                $('#same_address').attr('checked', false);
+            } else {
+                $("#nb_loc").removeClass('hidden');
             }
         });
     </script>
