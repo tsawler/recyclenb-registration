@@ -51,4 +51,15 @@ class TireRegistration extends Model {
     {
         return $this->hasMany('App\TireRegistrationOfficer');
     }
+
+
+    public function notes()
+    {
+        return $this->hasMany('App\TireRegistrationNote');
+    }
+
+    public function history()
+    {
+        return $this->hasMany('App\TireRegistrationHistory');
+    }
 }

@@ -86,4 +86,14 @@ class BrandRegistration extends Model {
         return $this->hasOne('App\ElectronicsNumber');
     }
 
+    public function notes()
+    {
+        return $this->hasMany('App\BrandRegistrationNote');
+    }
+
+    public function history()
+    {
+        return $this->hasMany('App\BrandRegistrationHistory');
+    }
+
 }

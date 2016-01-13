@@ -12,7 +12,11 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>{!! Lang::get('vcms.tire_registration') !!}  <a href="/admin/registrations/print-tire-registration?id={!! $registration->id !!}"><i class="fa fa-file-pdf-o"></i> Download PDF</a></h5>
+                <h5>{!! Lang::get('vcms.tire_registration') !!}
+                    @if($registration->id > 0)
+                    <a href="/admin/registrations/print-tire-registration?id={!! $registration->id !!}"><i class="fa fa-file-pdf-o"></i> Download PDF</a>
+                    @endif
+                </h5>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up"></i>
@@ -36,6 +40,18 @@
                                 class="active"
                                     @endif
                             ><a href="#officers" aria-controls="officers" role="tab" data-toggle="tab">Officers</a></li>
+
+                            <li role="presentation"
+                                @if((Input::has('tab')) && (Input::get('tab') == 'notes'))
+                                class="active"
+                                    @endif
+                            ><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Notes</a></li>
+
+                            <li role="presentation"
+                                @if((Input::has('tab')) && (Input::get('tab') == 'history'))
+                                class="active"
+                                    @endif
+                            ><a href="#notes" aria-controls="history" role="tab" data-toggle="tab">History</a></li>
                         @endif
                     </ul>
 
@@ -555,6 +571,7 @@
                         </div>
 
                         @if($registration->id > 0)
+
                             <div role="tabpanel"
                                  @if((Input::has('tab')) && (Input::get('tab') == 'officers'))
                                  class="tab-pane active"
@@ -765,6 +782,26 @@
 
                                 {!! Form::hidden('id', $registration->id) !!}
                                 {!! Form::close() !!}
+                            </div>
+
+                            <div role="tabpanel"
+                                 @if((Input::has('tab')) && (Input::get('tab') == 'notes'))
+                                 class="tab-pane active"
+                                 @else
+                                 class="tab-pane"
+                                 @endif
+                                 id="notes">
+
+                            </div>
+
+                            <div role="tabpanel"
+                                 @if((Input::has('tab')) && (Input::get('tab') == 'history'))
+                                 class="tab-pane active"
+                                 @else
+                                 class="tab-pane"
+                                 @endif
+                                 id="history">
+
                             </div>
                         @endif
                     </div>
