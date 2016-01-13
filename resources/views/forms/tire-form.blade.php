@@ -113,96 +113,107 @@
     </label>
 </div>
 
-<div class="form-group">
-    <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
-    {!! Form::text('nb_physical_location', null, ['id' => 'nb_physical_location', 'class' => 'form-control required']) !!}
+<div class="checkbox">
+    <label>
+        <input type="checkbox" value="" id="no_location">
+        {!! Lang::get('forms.no_location') !!}
+    </label>
 </div>
 
-<div class="form-group">
-    <label for="head_mailing_address">{!! Lang::get('forms.mailing_address') !!}</label>
-    {!! Form::text('nb_mailing_address', null, ['id' => 'nb_mailing_address', 'class' => 'form-control required']) !!}
-</div>
+<div id="nb_loc">
+    <div class="form-group">
+        <label for="nb_physical_location">{!! Lang::get('forms.physical_location') !!}</label>
+        {!! Form::text('nb_physical_location', null, ['id' => 'nb_physical_location', 'class' => 'form-control required']) !!}
+    </div>
 
-<div class="form-group">
-    <label for="nb_province_state">{!! Lang::get('forms.province_state') !!}</label>
-    {!! Form::select('nb_province_state', [
-							"AB" => "Alberta",
-                            "BC" => Lang::get('provinces.bc'),
-                            "MB" => "Manitoba",
-                            "NB" => Lang::get('provinces.nb'),
-                            "NL" => Lang::get('provinces.nl'),
-                            "NS" => Lang::get('provinces.ns'),
-                            "NT" => Lang::get('provinces.nwt'),
-                            "NU" => "Nunavut",
-                            "ON" => "Ontario",
-                            "PE" => Lang::get('provinces.pei'),
-                            "QC" => Lang::get('provinces.qc'),
-                            "SK" => "Saskatchewan",
-                            "YT" => "Yukon",
-                            "AL" => "Alabama",
-                            "AK" => "Alaska",
-                            "AZ" => "Arizona",
-                            "AR" => "Arkansas",
-                            "CA" => Lang::get('provinces.ca'),
-                            "CO" => "Colorado",
-                            "CT" => "Connecticut",
-                            "DE" => "Delaware",
-                            "DC" => "District Of Columbia",
-                            "FL" => Lang::get('provinces.fl'),
-                            "GA" => Lang::get('provinces.ga'),
-                            "HI" => Lang::get('provinces.hi'),
-                            "ID" => "Idaho",
-                            "IL" => "Illinois",
-                            "IN" => "Indiana",
-                            "IA" => "Iowa",
-                            "KS" => "Kansas",
-                            "KY" => "Kentucky",
-                            "LA" => Lang::get('provinces.la'),
-                            "ME" => "Maine",
-                            "MD" => "Maryland",
-                            "MA" => "Massachusetts",
-                            "MI" => "Michigan",
-                            "MN" => "Minnesota",
-                            "MS" => "Mississippi",
-                            "MO" => "Missouri",
-                            "MT" => "Montana",
-                            "NE" => "Nebraska",
-                            "NV" => "Nevada",
-                            "NH" => "New Hampshire",
-                            "NJ" => "New Jersey",
-                            "NM" => Lang::get('provinces.nm'),
-                            "NY" => "New York",
-                            "NC" => Lang::get('provinces.nc'),
-                            "ND" => Lang::get('provinces.nd'),
-                            "OH" => "Ohio",
-                            "OK" => "Oklahoma",
-                            "OR" => "Oregon",
-                            "PA" => Lang::get('provinces.pa'),
-                            "RI" => "Rhode Island",
-                            "SC" => Lang::get('provinces.sc'),
-                            "SD" => Lang::get('provinces.sd'),
-                            "TN" => "Tennessee",
-                            "TX" => "Texas",
-                            "UT" => "Utah",
-                            "VT" => "Vermont",
-                            "VA" => Lang::get('provinces.va'),
-                            "WA" => "Washington",
-                            "WV" => Lang::get('provinces.wv'),
-                            "WI" => "Wisconsin",
-                            "WY" => "Wyoming"],
-							null,
-							['class' => 'form-control', 'id' =>'nb_province_state']) !!}
-</div>
+    <div class="form-group">
+        <label for="head_mailing_address">{!! Lang::get('forms.mailing_address') !!}</label>
+        {!! Form::text('nb_mailing_address', null, ['id' => 'nb_mailing_address', 'class' => 'form-control required']) !!}
+    </div>
 
-<div class="form-group">
-    <label for="nb_zip">{!! Lang::get('forms.zip') !!}</label>
-    {!! Form::text('nb_zip', null, ['id' => 'nb_zip', 'class' => 'form-control required']) !!}
+    <div class="form-group">
+        <label for="nb_province_state">{!! Lang::get('forms.province_state') !!}</label>
+        {!! Form::select('nb_province_state', [
+                                "AB" => "Alberta",
+                                "BC" => Lang::get('provinces.bc'),
+                                "MB" => "Manitoba",
+                                "NB" => Lang::get('provinces.nb'),
+                                "NL" => Lang::get('provinces.nl'),
+                                "NS" => Lang::get('provinces.ns'),
+                                "NT" => Lang::get('provinces.nwt'),
+                                "NU" => "Nunavut",
+                                "ON" => "Ontario",
+                                "PE" => Lang::get('provinces.pei'),
+                                "QC" => Lang::get('provinces.qc'),
+                                "SK" => "Saskatchewan",
+                                "YT" => "Yukon",
+                                "AL" => "Alabama",
+                                "AK" => "Alaska",
+                                "AZ" => "Arizona",
+                                "AR" => "Arkansas",
+                                "CA" => Lang::get('provinces.ca'),
+                                "CO" => "Colorado",
+                                "CT" => "Connecticut",
+                                "DE" => "Delaware",
+                                "DC" => "District Of Columbia",
+                                "FL" => Lang::get('provinces.fl'),
+                                "GA" => Lang::get('provinces.ga'),
+                                "HI" => Lang::get('provinces.hi'),
+                                "ID" => "Idaho",
+                                "IL" => "Illinois",
+                                "IN" => "Indiana",
+                                "IA" => "Iowa",
+                                "KS" => "Kansas",
+                                "KY" => "Kentucky",
+                                "LA" => Lang::get('provinces.la'),
+                                "ME" => "Maine",
+                                "MD" => "Maryland",
+                                "MA" => "Massachusetts",
+                                "MI" => "Michigan",
+                                "MN" => "Minnesota",
+                                "MS" => "Mississippi",
+                                "MO" => "Missouri",
+                                "MT" => "Montana",
+                                "NE" => "Nebraska",
+                                "NV" => "Nevada",
+                                "NH" => "New Hampshire",
+                                "NJ" => "New Jersey",
+                                "NM" => Lang::get('provinces.nm'),
+                                "NY" => "New York",
+                                "NC" => Lang::get('provinces.nc'),
+                                "ND" => Lang::get('provinces.nd'),
+                                "OH" => "Ohio",
+                                "OK" => "Oklahoma",
+                                "OR" => "Oregon",
+                                "PA" => Lang::get('provinces.pa'),
+                                "RI" => "Rhode Island",
+                                "SC" => Lang::get('provinces.sc'),
+                                "SD" => Lang::get('provinces.sd'),
+                                "TN" => "Tennessee",
+                                "TX" => "Texas",
+                                "UT" => "Utah",
+                                "VT" => "Vermont",
+                                "VA" => Lang::get('provinces.va'),
+                                "WA" => "Washington",
+                                "WV" => Lang::get('provinces.wv'),
+                                "WI" => "Wisconsin",
+                                "WY" => "Wyoming"],
+                                null,
+                                ['class' => 'form-control', 'id' =>'nb_province_state']) !!}
+    </div>
+
+    <div class="form-group">
+        <label for="nb_zip">{!! Lang::get('forms.zip') !!}</label>
+        {!! Form::text('nb_zip', null, ['id' => 'nb_zip', 'class' => 'form-control required']) !!}
+    </div>
 </div>
 
 <h3>{!! Lang::get('forms.corp_blurb') !!}</h3>
 
 <div id="corp" class="top-div">
-    <h4>{!! Lang::get('forms.officer') !!} <a href="#!" class="text-danger hidden remove remove-button">{!! Lang::get('forms.delete_this_officer') !!}</a></h4>
+    <h4>{!! Lang::get('forms.officer') !!} <a href="#!"
+                                              class="text-danger hidden remove remove-button">{!! Lang::get('forms.delete_this_officer') !!}</a>
+    </h4>
     <div class="form-group">
         <label for="officer_name">{!! Lang::get('forms.name') !!}</label>
         {!! Form::text('officer_name[]', null, ['id' => 'officer_name', 'class' => 'form-control']) !!}
@@ -295,7 +306,6 @@
     </div>
 </div>
 <a class="btn btn-primary" onclick="addOfficer()">{!! Lang::get('forms.add_an_officer') !!}</a>
-
 
 
 <h3>{!! Lang::get('forms.contact_blurb') !!}</h3>

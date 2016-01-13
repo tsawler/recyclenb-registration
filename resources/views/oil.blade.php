@@ -66,5 +66,18 @@
                 $("#nb_zip").val('');
             }
         });
+
+        $("#no_location").change(function(){
+            if(document.getElementById('no_location').checked) {
+                $("#nb_loc").addClass('hidden');
+                $("#nb_physical_location").val('');
+                $("#nb_mailing_address").val('');
+                $("#nb_province_state").val('');
+                $("#nb_zip").val('');
+                $('#same_address').attr('checked', false);
+            } else {
+                $("#nb_loc").removeClass('hidden');
+            }
+        });
     </script>
 @stop

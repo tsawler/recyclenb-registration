@@ -58,5 +58,6 @@ return [
     'same_address'              => 'Même adresse que ci-dessus',
     'add_an_officer'            => 'Ajouter un dirigeant',
     'delete_this_officer'       => 'Supprimer ce dirigeant',
+    'no_location'               => 'Nous ne disposons pas d\'un emplacement au Nouveau-Brunswick',
 
 ];

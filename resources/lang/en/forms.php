@@ -58,5 +58,6 @@ return [
     'same_address'              => 'Same address as above',
     'add_an_officer'            => 'Add an Officer',
     'delete_this_officer'       => 'Delete this officer',
+    'no_location'               => 'We do not have a location in New Brunsick',
 
 ];
