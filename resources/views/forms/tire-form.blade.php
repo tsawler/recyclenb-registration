@@ -225,7 +225,7 @@
             'President' => Lang::get('forms.president'),
             'Vice President' => Lang::get('forms.vice_president'),
             'Treasurer' => Lang::get('forms.treasurer'),
-            'Director' => Lang::get('forms.director'),
+            'Secretary' => Lang::get('forms.secretary'),
         ],
         null,
         array('class' => 'form-control')) !!}

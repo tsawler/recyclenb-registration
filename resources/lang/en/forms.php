@@ -64,5 +64,6 @@ return [
     'vice_president'            => 'Vice President',
     'treasurer'                 => 'Treasurer',
     'director'                  => 'Director',
+    'secretary'                 => 'Secretary',
 
 ];
