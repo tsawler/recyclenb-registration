@@ -404,6 +404,7 @@
 </div>
 
 <h3>{!! Lang::get('forms.agent_blurb') !!}</h3>
+<p>{!! Lang::get('forms.agent_description') !!}</p>
 
 <div class="form-group">
     <label for="agent_name">{!! Lang::get('forms.name') !!}</label>

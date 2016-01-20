@@ -28,6 +28,7 @@ return [
     'email_address'             => 'Email Address:',
     'telephone'                 => 'Telephone Number:',
     'agent_blurb'               => 'Name, Company Name, Address and Telephone of any AGENT acting on behalf of the Applicant:',
+    'agent_description'         => 'A brand owner may submit a products stewardship plan as outlined in the Designated Materials Regulation under the Clean Environment Act or assign an agent to submit a plan on its behalf. Refer to the Designated Materials <a href="http://laws.gnb.ca/en/ShowTdm/cr/2008-54" target=_blank>Regulation</a> for details. Examples of agents managing stewardship programs in New Brunswick include Product Care, SOGHUOMA, EPRA. ',
     'company_name'              => 'Company Name:',
     'register'                  => 'Register',
     'tire_program'              => 'Tire Program Registration Form',

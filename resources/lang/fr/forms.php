@@ -28,6 +28,7 @@ return [
     'email_address'             => 'Courriel',
     'telephone'                 => 'Téléphone',
     'agent_blurb'               => 'Nom, nom de l’entreprise, adresse et numéro de téléphone de tout AGENT agissant pour le compte du demandeur',
+    'agent_description'         => 'Un propriétaire de marque peut présenter un plan d’écologisation de produits comme il est décrit dans le Règlement sur les matières désignées afférent à la Loi sur l’assainissement de l’environnement ou demander à un mandataire de présenter un plan en son nom. Veuillez consulter le <a href="http://laws.gnb.ca/fr/showtdm/cr/2008-54/2008-54/se:54" target=_blank>Règlement</a> sur les matières désignées pour les détails. Exemples de mandataires qui gèrent des programmes d’écologisation au Nouveau-Brunswick : Product Care, SOGHUOMA, ARPE. ',
     'company_name'              => 'Nom de l’entreprise',
     'register'                  => 'Envoyer la demande',
     'tire_program'              => 'Demande d’immatriculation au programme de pneus',
