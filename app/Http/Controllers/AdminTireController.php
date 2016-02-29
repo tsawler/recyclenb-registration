@@ -189,7 +189,7 @@ class AdminTireController extends Controller {
 
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Remittance: ' . $remit[$registration->remittance]));
         $pdf->Ln();
-        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registration Number: ' . $type[$registration->type_of_company]));
+        $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Registration Type: ' . $type[$registration->type_of_company]));
         $pdf->Ln();
         $pdf->Cell(0, 5, iconv('UTF-8', 'windows-1252','Sells Tires: ' . $yn[$registration->sell_tires]));
         $pdf->Ln();

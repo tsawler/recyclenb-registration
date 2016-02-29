@@ -410,7 +410,7 @@
                                         {!! Form::radio('type_of_company', '1') !!} {!! Lang::get('forms.tire_retailer') !!}
                                     </label><br>
                                     <label>
-                                        {!! Form::radio('type_of_company', '3') !!} {!! Lang::get('forms.car_dealer') !!}
+                                        {!! Form::radio('type_of_company', '2') !!} {!! Lang::get('forms.car_dealer') !!}
                                     </label><br>
                                     <label>
                                         {!! Form::radio('type_of_company', '3') !!} {!! Lang::get('forms.solid_waste_commission') !!}
