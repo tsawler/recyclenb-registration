@@ -70,5 +70,5 @@ return [
     'yes' => 'Oui',
     'no'  => 'Non',
     'late_registration' => 'Votre entreprise a-t-elle commencé ses activités au Nouveau-Brunswick après le 21 février 2016?',
-    'ack' => 'En vertu de la Loi sur l\'assainissement de l\'environnement et de l’article 50.35 du Règlement sur les matières désignées, la date limite d’immatriculation des propriétaires de marque auprès de Recycle NB était le 1er février 21 2016. Par conséquent, toute immatriculation demandée après cette date est considérée comme une immatriculation tardive.',
+    'ack' => 'En vertu de la Loi sur l\'assainissement de l\'environnement et de l’article 50.35 du Règlement sur les matières désignées, la date limite d’immatriculation des propriétaires de marque auprès de Recycle NB était le 1er février 21 2016. Par conséquent, toute immatriculation demandée après cette date est considérée comme une immatriculation tardive. Veuillez cocher la case pour reconnaître qu\'il s\'agit d\'un enregistrement tardif.',
 ];
