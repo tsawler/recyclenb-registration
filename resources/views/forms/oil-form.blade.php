@@ -5,6 +5,23 @@
     {!! Form::text('name_of_applicant', null, ['id' => 'name_of_applicant', 'class' => 'form-control required']) !!}
 </div>
 
+@if((isset($type)) && ($type == 3))
+    <div class="form-group">
+        <label for="late_registration">{!! Lang::get('forms.late_registration') !!}</label>
+        {!! Form::select('late_registration', [0 => Lang::get('forms.no'), 1 => Lang::get('forms.yes')], null,
+							array('class' => 'form-control', 'id' => 'late_registration')) !!}
+    </div>
+
+    <div class="hidden" id="ack">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" class="required" value="1" name="ack" id="ack">
+                {!! Lang::get('forms.ack') !!}
+            </label>
+        </div>
+    </div>
+@endif
+
 <h3>{!! Lang::get('forms.address_head_office') !!}</h3>
 
 <div class="form-group">

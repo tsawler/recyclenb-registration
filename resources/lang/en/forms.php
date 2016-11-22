@@ -61,10 +61,15 @@ return [
     'delete_this_officer'       => 'Delete this officer',
     'no_location'               => 'We do not have a location in New Brunsick',
 
-    'president'                 => 'President',
-    'vice_president'            => 'Vice President',
-    'treasurer'                 => 'Treasurer',
-    'director'                  => 'Director',
-    'secretary'                 => 'Secretary',
+    'president'      => 'President',
+    'vice_president' => 'Vice President',
+    'treasurer'      => 'Treasurer',
+    'director'       => 'Director',
+    'secretary'      => 'Secretary',
+
+    'yes' => 'Yes',
+    'no'  => 'No',
+    'late_registration' => 'Did your business begin operation in New Brunswick after February 21, 2016?',
+    'ack' => 'Under the Clean Environment Act and Section 50.35 of the Designated Materials Regulation, the deadline for brand owners to register with Recycle NB was February 21, 2016. Therefore, any registration after that date is a late registration. Please check the box to acknowledge that this is a late registration',
 
 ];

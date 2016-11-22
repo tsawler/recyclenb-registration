@@ -75,6 +75,22 @@
                                 {!! Form::text('name_of_applicant', null, ['id' => 'name_of_applicant', 'class' => 'form-control']) !!}
                             </div>
 
+                            @if($registration->type == 3)
+
+                                <div class="checkbox">
+                                    <label>
+                                        @if($registration->ack == 1)
+                                            <input type="checkbox" class="" value="1" checked name="ack" id="ack">
+                                        @else
+                                            <input type="checkbox" class="" value="1" name="ack" id="ack">
+                                        @endif
+
+                                        {!! Lang::get('forms.ack') !!}
+                                    </label>
+                                </div>
+
+                            @endif
+
                             <div class="form-group">
                                 <label>Registration Type</label><br>
 

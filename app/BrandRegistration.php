@@ -40,6 +40,7 @@ class BrandRegistration extends Model {
         'agent_phone',
         'agent_email',
         'signature',
+        'ack',
     ];
 
 
