@@ -70,6 +70,6 @@ return [
     'yes' => 'Yes',
     'no'  => 'No',
     'late_registration' => 'Did your business begin operation in New Brunswick after February 21, 2016?',
-    'ack' => 'Under the Clean Environment Act and Section 50.35 of the Designated Materials Regulation, the deadline for brand owners to register with Recycle NB was February 21, 2016. Therefore, any registration after that date is a late registration. Please check the box to acknowledge that this is a late registration',
+    'ack' => 'Under the Clean Environment Act and Section 50.35 of the Designated Materials Regulation, the deadline for brand owners to register with Recycle NB was February 21, 2016. Therefore, any registration after that date is a late registration. Please check the box to acknowledge that this is a late registration.',
 
 ];
