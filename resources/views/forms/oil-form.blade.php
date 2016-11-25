@@ -8,7 +8,7 @@
 @if((isset($type)) && ($type == 3))
     <div class="form-group">
         <label for="late_registration">{!! Lang::get('forms.late_registration') !!}</label>
-        {!! Form::select('late_registration', [0 => Lang::get('forms.no'), 1 => Lang::get('forms.yes')], null,
+        {!! Form::select('late_registration', [ 1 => Lang::get('forms.yes'), 0 => Lang::get('forms.no'),], null,
 							array('class' => 'form-control', 'id' => 'late_registration')) !!}
     </div>
 

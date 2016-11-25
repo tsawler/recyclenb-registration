@@ -81,7 +81,7 @@
         });
 
         $("#late_registration").change(function(){
-            if ($(this).val() == 1) {
+            if ($(this).val() == 0) {
                 $("#ack").removeClass('hidden');
             } else {
                 $("#ack").addClass('hidden');
