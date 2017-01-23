@@ -8,17 +8,8 @@
 @if((isset($type)) && ($type == 3))
     <div class="form-group">
         <label for="late_registration">{!! Lang::get('forms.late_registration') !!}</label>
-        {!! Form::select('late_registration', [ 1 => Lang::get('forms.yes'), 0 => Lang::get('forms.no'),], null,
-							array('class' => 'form-control', 'id' => 'late_registration')) !!}
-    </div>
-
-    <div class="hidden" id="ack">
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" class="required" value="1" name="ack" id="ack">
-                {!! Lang::get('forms.ack') !!}
-            </label>
-        </div>
+        {!! Form::select('late_registration', [ '' => '', 1 => Lang::get('forms.yes'), 0 => Lang::get('forms.no'),], null,
+							array('class' => 'form-control required', 'id' => 'late_registration')) !!}
     </div>
 @endif
 
