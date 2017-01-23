@@ -18,6 +18,14 @@ class OilController extends Controller {
         $registration = new BrandRegistration;
         $registration->fill(Input::all());
         $registration->ip_address = Request::getClientIp();
+
+        if (Input::has('late_registration')){
+            if (Input::get('late_registration') == 1)
+                $registration->ack = 1;
+            else
+                $registration->ack = 0;
+        }
+
         $registration->save();
         $registration_id = $registration->id;
 
