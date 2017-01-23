@@ -85,7 +85,7 @@
                                             <input type="checkbox" class="" value="1" name="ack" id="ack">
                                         @endif
 
-                                        {!! Lang::get('forms.ack') !!}
+                                        This is a late registration.
                                     </label>
                                 </div>
 
